@@ -38,5 +38,5 @@
 [issues-shield]: https://img.shields.io/github/issues/iiProCraft/SurvivalGames.svg?style=for-the-badge
 [issues-url]: https://github.com/iiProCraft/SurvivalGames/issues
 [license-shield]: https://img.shields.io/github/license/iiProCraft/SurvivalGames.svg?style=for-the-badge
-[license-url]: https://github.com/iiProCraft/SurvivalGames/blob/master/LICENSE
+[license-url]: https://github.com/iiProCraft/SurvivalGames/LICENSE
 [product-screenshot]: images/logo.png
