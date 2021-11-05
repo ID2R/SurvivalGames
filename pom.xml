@@ -8,9 +8,9 @@
     <artifactId>SurvivalGames</artifactId>
     <packaging>pom</packaging>
     <version>1.0-BETA</version>
+
     <modules>
         <module>api</module>
-        <module>game-core</module>
         <module>bungee</module>
         <module>core</module>
         <module>abstraction</module>
