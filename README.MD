@@ -18,9 +18,9 @@
     <br />
     <a href="https://github.com/iiProCraft/SurvivalGames/wiki">Wiki</a>
     •
-    <a href="https://github.com/iiProCraft/SurvivalGames/issues">Report issue</a>
+    <a href="https://github.com/iiProCraft/SurvivalGames/issues/new?assignees=&labels=Requires+Testing&template=bug_report.yml">Report issue</a>
     •
-    <a href="https://github.com/iiProCraft/SurvivalGames/issues">Request feature</a>
+    <a href="https://github.com/iiProCraft/SurvivalGames/issues/new?assignees=&labels=Enhancement&template=feature_request.yml">Request feature</a>
     <br />
     <br />
     <a>This project will be available soon...</a>
