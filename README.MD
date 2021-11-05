@@ -17,10 +17,13 @@
     <br />
     <br />
     <a href="https://github.com/iiProCraft/SurvivalGames/wiki">Wiki</a>
-    ·
+    •
     <a href="https://github.com/iiProCraft/SurvivalGames/issues">Report issue</a>
-    ·
+    •
     <a href="https://github.com/iiProCraft/SurvivalGames/issues">Request feature</a>
+    <br />
+    <br />
+    <a>This project will be available soon...</a>
   </p>
 </div>
 
