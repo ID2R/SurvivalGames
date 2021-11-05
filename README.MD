@@ -1,7 +1,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/iiProCraft/SurvivalGames">
-    <img src="images/logo.png" alt="Logo" width="1800" height="500">
+    <img src="images/logo.png" alt="Logo" width="1800" height="450">
   </a>
 
 <h3 align="center">SurvivalGames</h3>
