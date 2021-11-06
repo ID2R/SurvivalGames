@@ -1,0 +1,36 @@
+#
+#       SurvivalGames by iiProCraft
+#
+# for assistance visit https://github.com/iiProCraft/SurvivalGames/wiki/configuration/config-yml
+options:
+  mode: SHARED
+  bungee:
+    lobby-servers:
+      - SG01L
+      - SG02L
+    server-name: 'SG01'
+  vote:
+    enabled: true
+    max-arenas: 5
+    random-vote: true
+    vote-algorithm:
+      winner-arena-sort: GET_FIRST_ARENA_LIST
+connections:
+  redis: # It's used to communicate between servers, use it for better performance
+    enabled: false
+    host: 0.0.0.0:6379
+    channels:
+      servers: 'sg_servers'
+    authentication:
+      acl-auth: false
+      username: 'redisUser'
+      password: 'YeetyPa@asW0rD'
+  mysql:
+    enabled: true # If you disable this, it will use SQLite instead of MySQL
+    host: 0.0.0.0:3306
+    database: survivalgames
+    table-prefix: 'sg_'
+    use-ssl: false
+    authentication:
+      username: 'root'
+      password: 'yeetyP@ssw0rd'

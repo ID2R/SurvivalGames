@@ -16,31 +16,7 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package dev.iiprocraft.sg.base.plugin;
+package dev.iiprocraft.sg.api.events.spigot.player;
 
-import dev.iiprocraft.sg.base.SGPreLoader;
-import dev.iiprocraft.sg.common.plugin.PluginLoader;
-
-/**
- * @author iiProCraft
- */
-public class SGPlugin implements PluginLoader {
-
-    private SGPreLoader main;
-
-    public SGPlugin(SGPreLoader main) {
-        this.main = main;
-    }
-
-    /**
-     * This method is inherited from PluginLoader interface
-     */
-    @Override
-    public void load() {
-
-    }
-    @Override
-    public void unload() {
-
-    }
+public class PlayerVoteEvent {
 }

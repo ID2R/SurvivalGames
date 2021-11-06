@@ -16,31 +16,15 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package dev.iiprocraft.sg.base.plugin;
+package dev.iiprocraft.sg.api.arena;
 
-import dev.iiprocraft.sg.base.SGPreLoader;
-import dev.iiprocraft.sg.common.plugin.PluginLoader;
+import org.bukkit.World;
 
-/**
- * @author iiProCraft
- */
-public class SGPlugin implements PluginLoader {
-
-    private SGPreLoader main;
-
-    public SGPlugin(SGPreLoader main) {
-        this.main = main;
-    }
-
-    /**
-     * This method is inherited from PluginLoader interface
-     */
-    @Override
-    public void load() {
-
-    }
-    @Override
-    public void unload() {
-
+public class ArenaWorld {
+    private World world;
+    private final String name;
+    public ArenaWorld(String name, World world) {
+        this.name = name;
+        this.world = world;
     }
 }

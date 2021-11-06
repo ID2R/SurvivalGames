@@ -16,31 +16,17 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package dev.iiprocraft.sg.base.plugin;
+package dev.iiprocraft.sg.api.events.spigot.arena;
 
-import dev.iiprocraft.sg.base.SGPreLoader;
-import dev.iiprocraft.sg.common.plugin.PluginLoader;
+import org.bukkit.event.Event;
+import org.bukkit.event.HandlerList;
 
-/**
- * @author iiProCraft
- */
-public class SGPlugin implements PluginLoader {
+public class ArenaVoteWinEvent extends Event {
 
-    private SGPreLoader main;
+    private static final HandlerList handlers = new HandlerList();
 
-    public SGPlugin(SGPreLoader main) {
-        this.main = main;
-    }
-
-    /**
-     * This method is inherited from PluginLoader interface
-     */
     @Override
-    public void load() {
-
-    }
-    @Override
-    public void unload() {
-
+    public HandlerList getHandlers() {
+        return handlers;
     }
 }

@@ -16,31 +16,26 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package dev.iiprocraft.sg.base.plugin;
+package dev.iiprocraft.sg.api.arena.vote;
 
-import dev.iiprocraft.sg.base.SGPreLoader;
-import dev.iiprocraft.sg.common.plugin.PluginLoader;
+import org.bukkit.entity.Player;
 
-/**
- * @author iiProCraft
- */
-public class SGPlugin implements PluginLoader {
+import java.util.ArrayList;
+import java.util.List;
 
-    private SGPreLoader main;
-
-    public SGPlugin(SGPreLoader main) {
-        this.main = main;
+public class VotableArena {
+    private final String name;
+    private final List<Player> voters;
+    public VotableArena(String name) {
+        this.name = name;
+        this.voters = new ArrayList<>();
     }
 
-    /**
-     * This method is inherited from PluginLoader interface
-     */
-    @Override
-    public void load() {
-
+    public String getName() {
+        return name;
     }
-    @Override
-    public void unload() {
 
+    public List<Player> getVoters() {
+        return voters;
     }
 }

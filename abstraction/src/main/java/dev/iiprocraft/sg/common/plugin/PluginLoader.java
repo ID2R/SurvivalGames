@@ -1,4 +1,5 @@
 /*
+ *
  *     SurvivalGames - A simple and classic mini-game.
  *     Copyright (C) 2021
  *
@@ -16,31 +17,9 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package dev.iiprocraft.sg.base.plugin;
+package dev.iiprocraft.sg.common.plugin;
 
-import dev.iiprocraft.sg.base.SGPreLoader;
-import dev.iiprocraft.sg.common.plugin.PluginLoader;
-
-/**
- * @author iiProCraft
- */
-public class SGPlugin implements PluginLoader {
-
-    private SGPreLoader main;
-
-    public SGPlugin(SGPreLoader main) {
-        this.main = main;
-    }
-
-    /**
-     * This method is inherited from PluginLoader interface
-     */
-    @Override
-    public void load() {
-
-    }
-    @Override
-    public void unload() {
-
-    }
+public interface PluginLoader {
+    void load();
+    void unload();
 }

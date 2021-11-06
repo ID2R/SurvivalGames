@@ -16,31 +16,21 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package dev.iiprocraft.sg.base.plugin;
+package dev.iiprocraft.sg.base;
 
-import dev.iiprocraft.sg.base.SGPreLoader;
-import dev.iiprocraft.sg.common.plugin.PluginLoader;
+import dev.iiprocraft.sg.base.plugin.SGPlugin;
+import org.bukkit.plugin.java.JavaPlugin;
 
 /**
  * @author iiProCraft
  */
-public class SGPlugin implements PluginLoader {
+public class SGPreLoader extends JavaPlugin {
 
-    private SGPreLoader main;
+    private SGPlugin plugin;
 
-    public SGPlugin(SGPreLoader main) {
-        this.main = main;
-    }
-
-    /**
-     * This method is inherited from PluginLoader interface
-     */
     @Override
-    public void load() {
-
+    public void onEnable() {
+        this.plugin = new SGPlugin(this);
     }
-    @Override
-    public void unload() {
 
-    }
 }
