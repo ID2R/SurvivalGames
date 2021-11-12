@@ -44,10 +44,10 @@ public class SGPlugin implements PluginLoader {
      */
     @Override
     public void load() {
-
+     //TODO LOAD
     }
     @Override
     public void unload() {
-
+     //TODO UNLOAD
     }
 }
