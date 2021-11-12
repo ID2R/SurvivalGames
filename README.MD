@@ -39,7 +39,7 @@ Here's some of our features:
 * Very lightweight, so it won't affect your server performance a lot
 * Fully configurable, so if you are not a developer you can edit it via configurations
 
-> If you have any idea please [Suggest your idea](https://github.com/iiProCraft/SurvivalGames/issues/new?assignees=&labels=Enhancement&template=feature_request.yml) here.
+If you have any idea please [Suggest your idea](https://github.com/iiProCraft/SurvivalGames/issues/new?assignees=&labels=Enhancement&template=feature_request.yml) here.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
