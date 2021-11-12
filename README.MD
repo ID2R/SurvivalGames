@@ -22,8 +22,6 @@
     •
     <a href="https://github.com/iiProCraft/SurvivalGames/issues/new?assignees=&labels=Enhancement&template=feature_request.yml">Request feature</a>
     <br />
-    <br />
-    <a>This project will be available soon...</a>
   </p>
 </div>
 
