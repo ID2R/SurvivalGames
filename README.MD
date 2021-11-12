@@ -54,3 +54,7 @@ If you have any idea please [Suggest your idea](https://github.com/iiProCraft/Su
 [license-shield]: https://img.shields.io/github/license/iiProCraft/SurvivalGames.svg?style=for-the-badge
 [license-url]: https://github.com/iiProCraft/SurvivalGames/blob/master/LICENSE
 [product-screenshot]: images/logo.png
+
+## License
+
+This project is licensed under [MIT License](https://opensource.org/licenses/MIT), you can read it at [LICENSE](https://github.com/iiProCraft/SurvivalGames/blob/master/LICENSE) file
