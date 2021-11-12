@@ -37,6 +37,7 @@ Here's some of our features:
 * Single and Multiple map system (Multiple means you can `/vote` for map like HiveMC)
 * SlimeWorldManager support for better map loading and restore system
 * Very lightweight, so it won't affect your server performance a lot
+* Fully configurable, so if you are not a developer you can edit it via configurations
 
 > If you have any idea please [Suggest your idea](https://github.com/iiProCraft/SurvivalGames/issues/new?assignees=&labels=Enhancement&template=feature_request.yml) here.
 
