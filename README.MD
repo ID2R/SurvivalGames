@@ -31,12 +31,14 @@ For years ago, a lot of players want a SurvivalGames system like HiveMC's one an
 
 ## Features
 
-Here's why:
+Here's some of our features:
 * MySQL and SQLite storage system
 * Redis support for bungee mode
 * Single and Multiple map system (Multiple means you can `/vote` for map like HiveMC)
 * SlimeWorldManager support for better map loading and restore system
 * Very lightweight, so it won't affect your server performance a lot
+
+> If you have any idea please [![Request feature][Suggest]][https://github.com/iiProCraft/SurvivalGames/issues/new?assignees=&labels=Enhancement&template=feature_request.yml] here.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
