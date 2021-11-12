@@ -1,7 +1,7 @@
  /*
   * MIT License
   *
-  * Copyright (c) 2021 iiProCraft
+  * Copyright (c) 2021 iiProCraft & contributors
   * Copyright (c) 2021 Invvk
   *
   * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,7 +30,7 @@ public class SurvivalGamesAPI {
 
     private static final SurvivalGamesAPI API;
 
-    private PlayerManager playerManager;
+    private final PlayerManager playerManager;
 
     static {
         API = new SurvivalGamesAPI();
@@ -42,6 +42,10 @@ public class SurvivalGamesAPI {
 
     public static SurvivalGamesAPI getAPI() {
         return API;
+    }
+
+    public PlayerManager getPlayerManager() {
+        return playerManager;
     }
 
 }
