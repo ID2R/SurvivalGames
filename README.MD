@@ -31,13 +31,14 @@
 
 For years ago, a lot of players want a SurvivalGames system like HiveMC's one and since HiveMC closed at April 15, 2021, there is not another place to play their games. So I decided to recreate their game-modes for free and let other developers modify it as they want, that's why it's open source.
 
+## Features
+
 Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
+* MySQL and SQLite storage system
+* Redis support for bungee mode
+* Single and Multiple map system (Multiple means you can `/vote` for map like HiveMC)
+* SlimeWorldManager support for better map loading and restore system
+* Very lightweight, so it won't affect your server performance a lot
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
