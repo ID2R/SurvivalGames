@@ -38,7 +38,7 @@ Here's some of our features:
 * SlimeWorldManager support for better map loading and restore system
 * Very lightweight, so it won't affect your server performance a lot
 
-> If you have any idea please [![Request feature][Suggest]][https://github.com/iiProCraft/SurvivalGames/issues/new?assignees=&labels=Enhancement&template=feature_request.yml] here.
+> If you have any idea please [Suggest your idea](https://github.com/iiProCraft/SurvivalGames/issues/new?assignees=&labels=Enhancement&template=feature_request.yml) here.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
