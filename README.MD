@@ -41,6 +41,37 @@ Here's some of our features:
 
 If you have any idea please [Suggest your idea](https://github.com/iiProCraft/SurvivalGames/issues/new?assignees=&labels=Enhancement&template=feature_request.yml) here.
 
+## Arena System
+
+We have multiple ways to run the plugin:
+
+### Bungee Mode (aka Single server for every game)
+
+If you want to run this plugin with singleton server, there are two ways to run the plugin:
+
+* Bungee mode with auto-scale enabled: the plugin will run multiple arena processes with 1 minecraft instance.
+* Bungee mode with auto-scale disabled: the plugin will run one arena for each 1 minecraft instance.
+
+## Multi-arena Mode
+
+The best solution if you have a small minecraft server with ~100 players average, it will run all SurvivalGames processes such as lobby and arenas with 1 minecraft instance.
+
+### Shared mode
+
+A Great solution for very small servers like ~40 players average if you want to run multiple mini-games with 1 minecraft instance.
+
+****
+
+## Chest System
+
+We offer a very advanced & designable loot chest system. Items are based in chances and tiers for every chest type which they are all configurable as you want!
+
+****
+
+# License
+
+This project is licensed under [MIT License](https://opensource.org/licenses/MIT), you can read it at [LICENSE](https://github.com/iiProCraft/SurvivalGames/blob/master/LICENSE) file
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/iiProCraft/SurvivalGames.svg?style=for-the-badge
@@ -54,7 +85,3 @@ If you have any idea please [Suggest your idea](https://github.com/iiProCraft/Su
 [license-shield]: https://img.shields.io/github/license/iiProCraft/SurvivalGames.svg?style=for-the-badge
 [license-url]: https://github.com/iiProCraft/SurvivalGames/blob/master/LICENSE
 [product-screenshot]: images/logo.png
-
-## License
-
-This project is licensed under [MIT License](https://opensource.org/licenses/MIT), you can read it at [LICENSE](https://github.com/iiProCraft/SurvivalGames/blob/master/LICENSE) file
