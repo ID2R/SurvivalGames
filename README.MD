@@ -71,6 +71,14 @@ We offer a very advanced & designable loot chest system. Items are based in chan
 
 ****
 
+# Credits
+Thanks to:
+* Primt: Logo designing
+* Invvk: Some help with code organizing and modules ordering
+* SlawPing: Some help with the idea of the mini-game and coding stuff
+
+Also Thanks for everyone who kept this project alive and up-to-date :heart:
+
 # License
 
 This project is licensed under [MIT License](https://opensource.org/licenses/MIT), you can read it at [LICENSE](https://github.com/iiProCraft/SurvivalGames/blob/master/LICENSE) file
@@ -88,11 +96,3 @@ This project is licensed under [MIT License](https://opensource.org/licenses/MIT
 [license-shield]: https://img.shields.io/github/license/iiProCraft/SurvivalGames.svg?style=for-the-badge
 [license-url]: https://github.com/iiProCraft/SurvivalGames/blob/master/LICENSE
 [product-screenshot]: images/logo.png
-
-# Credits
-Thanks for:
-* Primt: Logo designing
-* Invvk: Some help with code organizing and modules ordering
-* SlawPing: Some help with the idea of the mini-game and coding stuff
-
-Also Thanks for everyone who kept this project alive and up-to-date :heart:
