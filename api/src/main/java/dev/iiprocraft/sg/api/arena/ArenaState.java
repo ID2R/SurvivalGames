@@ -25,5 +25,5 @@
 package dev.iiprocraft.sg.api.arena;
 
 public enum ArenaState {
-    WAITING, STARTING, PLAYING, DEATHMATCH, RESTARTING;
+    WAITING, STARTING, PLAYING, DEATH_MATCH, RESTARTING;
 }
