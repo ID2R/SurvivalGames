@@ -62,6 +62,11 @@ A Great solution for very small servers like ~40 players average if you want to 
 
 ## Chest System
 
+<div align="center">
+  <a href="https://github.com/iiProCraft/SurvivalGames">
+    <img src="images/chests.png" alt="Chests">
+  </a>
+</div>
 We offer a very advanced & designable loot chest system. Items are based in chances and tiers for every chest type which they are all configurable as you want!
 
 ****
@@ -83,3 +88,10 @@ This project is licensed under [MIT License](https://opensource.org/licenses/MIT
 [license-shield]: https://img.shields.io/github/license/iiProCraft/SurvivalGames.svg?style=for-the-badge
 [license-url]: https://github.com/iiProCraft/SurvivalGames/blob/master/LICENSE
 [product-screenshot]: images/logo.png
+
+# Credits
+Thanks for:
+* Primt: Logo designing
+* Invvk: Some help with code organizing and modules ordering
+* SlawPing: Some help with the idea of the mini-game and coding stuff
+And thanks for everyone who kept this project alive and up-to-date :heart:
