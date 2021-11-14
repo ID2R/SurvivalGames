@@ -14,7 +14,7 @@
         <module>bungee</module>
         <module>core</module>
         <module>abstraction</module>
-        <module>1.8_R3</module>
+        <module>nms_1_8_R3</module>
     </modules>
 
     <properties>
