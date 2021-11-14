@@ -24,30 +24,41 @@
 
 package dev.iiprocraft.sg.api.arena;
 
-import dev.iiprocraft.sg.api.arena.vote.VotableArena;
+ import com.google.common.base.Objects;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+ import java.util.UUID;
 
 public class SGArena {
 
     private final String name;
-    private final UUID uniqueId;
-    private boolean voting;
-    private ArenaState state;
-    private final List<VotableArena> votableArenas;
+    private String displayName;
+    private  UUID uniqueId = UUID.randomUUID();
+    private ArenaState state = ArenaState.WAITING;
 
     public SGArena(String name) {
         this.name = name;
-        this.state = ArenaState.WAITING;
-        this.uniqueId = UUID.randomUUID();
-        this.votableArenas = new ArrayList<>();
+        this.displayName = name;
     }
 
-    public List<VotableArena> getVotableArenas() {
-        return votableArenas;
+
+    public SGArena(UUID uniqueId, String name, String display) {
+        this.uniqueId = uniqueId;
+        this.name = name;
+        this.displayName = display;
     }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    public void setUniqueId(UUID uniqueId) {
+        this.uniqueId = uniqueId;
+    }
+
 
     public ArenaState getState() {
         return state;
@@ -57,19 +68,69 @@ public class SGArena {
         return name;
     }
 
-    public boolean isVoting() {
-        return voting;
-    }
 
     public void setState(ArenaState state) {
         this.state = state;
     }
 
-    public void setVoting(boolean voting) {
-        this.voting = voting;
-    }
-
     public UUID getUniqueId() {
         return uniqueId;
     }
+
+    public static class ArenaVote {
+
+        private final UUID voter;
+        private final SGArena arena;
+
+        public ArenaVote(UUID voter, SGArena arena) {
+            this.voter = voter;
+            this.arena = arena;
+        }
+
+        public SGArena getArena() {
+            return arena;
+        }
+
+        public UUID getVoter() {
+            return voter;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof ArenaVote)) return false;
+            ArenaVote arenaVote = (ArenaVote) o;
+            return Objects.equal(getVoter(), arenaVote.getVoter()) &&
+                    Objects.equal(getArena(), arenaVote.getArena());
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hashCode(getVoter(), getArena());
+        }
+    }
+
+
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof SGArena)) return false;
+        SGArena sgArena = (SGArena) o;
+        return
+                Objects.equal(getName(), sgArena.getName()) &&
+                Objects.equal(getDisplayName(), sgArena.getDisplayName()) &&
+                Objects.equal(getUniqueId(), sgArena.getUniqueId()) &&
+                getState() == sgArena.getState();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getName(), getDisplayName(),
+                getUniqueId(), getState());
+
+    }
+
+
 }
