@@ -76,6 +76,8 @@ Thanks to:
 * Primt: Logo designing
 * Invvk: Some help with code organizing and modules ordering
 * SlawPing: Some help with the idea of the mini-game and coding stuff
+* Mqzn: Working on the api & base code
+* DirectPlan: Working on the api & base code
 
 Also thanks to everyone who kept this project alive and up-to-date :heart:
 
