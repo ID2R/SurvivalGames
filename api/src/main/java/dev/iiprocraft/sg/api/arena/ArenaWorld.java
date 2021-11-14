@@ -24,13 +24,22 @@
 
 package dev.iiprocraft.sg.api.arena;
 
+import org.bukkit.Location;
 import org.bukkit.World;
 
-public class ArenaWorld {
-    private World world;
-    private final String name;
-    public ArenaWorld(String name, World world) {
-        this.name = name;
-        this.world = world;
-    }
+import java.util.ArrayList;
+import java.util.List;
+
+ public class ArenaWorld {
+     private final List<Location> spawns;
+     private World world;
+     private final String name;
+     public ArenaWorld(String name, World world) {
+         this.name = name;
+         this.world = world;
+         this.spawns = new ArrayList<>();
+     }
+     public World getWorld() {
+         return world;
+     }
 }

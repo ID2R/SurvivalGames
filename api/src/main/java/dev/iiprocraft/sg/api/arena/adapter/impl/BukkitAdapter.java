@@ -24,5 +24,26 @@
 
 package dev.iiprocraft.sg.api.arena.adapter.impl;
 
-public class BukkitAdapter {
+import dev.iiprocraft.sg.api.arena.ArenaWorld;
+import dev.iiprocraft.sg.api.arena.adapter.WorldAdapter;
+import org.bukkit.World;
+
+import java.util.concurrent.ExecutorService;
+
+public class BukkitAdapter implements WorldAdapter {
+
+    @Override
+    public World createCopy(ArenaWorld arenaWorld) {
+        return null;
+    }
+
+    @Override
+    public World loadWorld(String name) {
+        return null;
+    }
+
+    @Override
+    public ExecutorService getWorker() {
+        return null;
+    }
 }
