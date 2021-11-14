@@ -52,15 +52,13 @@ If you want to run this plugin with singleton server, there are two ways to run 
 * Bungee mode with auto-scale enabled: the plugin will run multiple arena processes with 1 minecraft instance.
 * Bungee mode with auto-scale disabled: the plugin will run one arena for each 1 minecraft instance.
 
-## Multi-arena Mode
+### Multi-arena Mode
 
 The best solution if you have a small minecraft server with ~100 players average, it will run all SurvivalGames processes such as lobby and arenas with 1 minecraft instance.
 
 ### Shared mode
 
 A Great solution for very small servers like ~40 players average if you want to run multiple mini-games with 1 minecraft instance.
-
-****
 
 ## Chest System
 
