@@ -49,7 +49,7 @@ We have multiple ways to run the plugin:
 
 If you want to run this plugin with singleton server, there are two ways to run the plugin:
 
-* Bungee mode with auto-scale enabled: the plugin will run multiple arena processes with 1 minecraft instance.
+* Bungee mode with auto-scale enabled: the plugin will run multiple arena processes with 1 minecraft instance. (Redis is required to be enabled)
 * Bungee mode with auto-scale disabled: the plugin will run one arena for each 1 minecraft instance.
 
 ### Multi-arena Mode
