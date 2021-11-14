@@ -24,6 +24,27 @@
 
 package dev.iiprocraft.sg.api.arena;
 
-public class ArenaManager {
+ import java.util.Collection;
+ import java.util.Map;
+ import java.util.concurrent.ConcurrentHashMap;
+
+ public class ArenaManager {
+
+    private final Map<String, SGArena> arenas;
+
+    public ArenaManager() {
+        this.arenas = new ConcurrentHashMap<>();
+
+        //TODO load arenas from whatever storage selected for this project
+    }
+
+    public Collection<? extends SGArena> getArenas() {
+        return arenas.values();
+    }
+
+    public SGArena getArena(String arenaName) {
+        return arenas.get(arenaName);
+    }
+
 
 }
