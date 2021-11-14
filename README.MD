@@ -95,4 +95,4 @@ Thanks for:
 * Invvk: Some help with code organizing and modules ordering
 * SlawPing: Some help with the idea of the mini-game and coding stuff
 
-And thanks for everyone who kept this project alive and up-to-date :heart:
+Also Thanks for everyone who kept this project alive and up-to-date :heart:
