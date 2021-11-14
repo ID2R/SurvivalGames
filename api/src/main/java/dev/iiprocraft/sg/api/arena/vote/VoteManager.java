@@ -46,7 +46,7 @@ public class VoteManager {
         Optional<Integer> optional = votes.values().stream()
                 .map((Set::size)).max((o, o2) -> o2-o);
 
-        arenaName = optional.isPresent()
+        arenaName = !optional.isPresent()
 
                 ? Optional.ofNullable(new ArrayList<>(votes.keySet())
                 .get(ThreadLocalRandom.current().nextInt(votes.size())))
