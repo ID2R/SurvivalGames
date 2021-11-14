@@ -28,19 +28,19 @@ import dev.iiprocraft.sg.api.player.PlayerManager;
 
 public class SurvivalGamesAPI {
 
-    private static final SurvivalGamesAPI API;
+    private static  SurvivalGamesAPI API = null;
 
     private final PlayerManager playerManager;
 
-    static {
-        API = new SurvivalGamesAPI();
-    }
 
     public SurvivalGamesAPI() {
         this.playerManager = new PlayerManager();
     }
 
     public static SurvivalGamesAPI getAPI() {
+        if(API == null) {
+            API = new SurvivalGamesAPI();
+        }
         return API;
     }
 

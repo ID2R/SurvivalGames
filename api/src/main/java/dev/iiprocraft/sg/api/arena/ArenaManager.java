@@ -25,4 +25,5 @@
 package dev.iiprocraft.sg.api.arena;
 
 public class ArenaManager {
+
 }
