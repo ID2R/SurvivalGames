@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package dev.iiprocraft.sg.base.adapters;
+package dev.iiprocraft.sg.base.adapters.world;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.grinderwolf.swm.api.SlimePlugin;
@@ -33,8 +33,8 @@ import com.grinderwolf.swm.api.exceptions.WorldInUseException;
 import com.grinderwolf.swm.api.world.SlimeWorld;
 import com.grinderwolf.swm.api.world.properties.SlimeProperties;
 import com.grinderwolf.swm.api.world.properties.SlimePropertyMap;
-import dev.iiprocraft.sg.api.arena.ArenaWorld;
-import dev.iiprocraft.sg.api.arena.adapter.WorldAdapter;
+import dev.iiprocraft.sg.base.game.arena.ArenaWorld;
+import dev.iiprocraft.sg.base.adapters.WorldAdapter;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 
@@ -46,14 +46,14 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 
-public class SlimeAdapter implements WorldAdapter {
+public class SlimeWorldManagerAdapter implements WorldAdapter {
 
     private final ExecutorService worldsWorker;
 
     private static final Map<String, SlimeWorld> worldMap = new HashMap<>();
 
     private final SlimePlugin slimePlugin;
-    public SlimeAdapter() {
+    public SlimeWorldManagerAdapter() {
         this.slimePlugin = (SlimePlugin) Bukkit.getPluginManager().getPlugin("SlimeWorldManager");
         ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("worlds-worker").build();
         this.worldsWorker = Executors.newSingleThreadExecutor(threadFactory);
