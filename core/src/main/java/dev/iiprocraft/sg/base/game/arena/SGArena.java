@@ -22,18 +22,23 @@
  * SOFTWARE.
  */
 
-package dev.iiprocraft.sg.api.arena;
+package dev.iiprocraft.sg.base.game.arena;
 
  import com.google.common.base.Objects;
- import dev.iiprocraft.sg.api.game.GameState;
+ import dev.iiprocraft.sg.api.arena.Arena;
+ import dev.iiprocraft.sg.api.arena.GameState;
+ import lombok.Getter;
+ import lombok.Setter;
 
  import java.util.UUID;
 
-public class SGArena {
+ @Getter
+ @Setter
+public class SGArena implements Arena {
 
     private final String name;
     private String displayName;
-    private  UUID uniqueId = UUID.randomUUID();
+    private UUID uniqueId = UUID.randomUUID();
     private GameState state = GameState.WAITING;
 
     public SGArena(String name) {
@@ -41,41 +46,10 @@ public class SGArena {
         this.displayName = name;
     }
 
-
     public SGArena(UUID uniqueId, String name, String display) {
         this.uniqueId = uniqueId;
         this.name = name;
         this.displayName = display;
-    }
-
-    public String getDisplayName() {
-        return displayName;
-    }
-
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
-    }
-
-    public void setUniqueId(UUID uniqueId) {
-        this.uniqueId = uniqueId;
-    }
-
-
-    public GameState getState() {
-        return state;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-
-    public void setState(GameState state) {
-        this.state = state;
-    }
-
-    public UUID getUniqueId() {
-        return uniqueId;
     }
 
     public static class ArenaVote {
@@ -111,9 +85,6 @@ public class SGArena {
         }
     }
 
-
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -132,6 +103,4 @@ public class SGArena {
                 getUniqueId(), getState());
 
     }
-
-
 }
