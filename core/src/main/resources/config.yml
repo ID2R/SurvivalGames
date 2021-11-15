@@ -9,6 +9,13 @@ options:
       - SG01L
       - SG02L
     server-name: 'SG01'
+    auto-scale: false
+  storage:
+    method: SQLITE # Available: MONGO, MYSQL, SQLITE, JSON
+    json:
+      directory: '$ROOTDIR/players/'
+    sqlite:
+      file-path: '$ROOTDIR/data.db'
   vote:
     enabled: true
     max-arenas: 5
@@ -26,7 +33,6 @@ connections:
       username: 'redisUser'
       password: 'YeetyPa@asW0rD'
   mysql:
-    enabled: true # If you disable this, it will use SQLite instead of MySQL
     host: 0.0.0.0:3306
     database: survivalgames
     table-prefix: 'sg_'
@@ -34,3 +40,5 @@ connections:
     authentication:
       username: 'root'
       password: 'yeetyP@ssw0rd'
+  mongodb:
+    host: 0.0.0.0:27017
