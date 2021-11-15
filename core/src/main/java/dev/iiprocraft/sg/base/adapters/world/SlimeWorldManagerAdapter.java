@@ -37,6 +37,7 @@ import dev.iiprocraft.sg.base.game.arena.ArenaWorld;
 import dev.iiprocraft.sg.base.adapters.WorldAdapter;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
+import org.bukkit.plugin.Plugin;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -53,8 +54,8 @@ public class SlimeWorldManagerAdapter implements WorldAdapter {
     private static final Map<String, SlimeWorld> worldMap = new HashMap<>();
 
     private final SlimePlugin slimePlugin;
-    public SlimeWorldManagerAdapter() {
-        this.slimePlugin = (SlimePlugin) Bukkit.getPluginManager().getPlugin("SlimeWorldManager");
+    public SlimeWorldManagerAdapter(Plugin plugin) {
+        this.slimePlugin = (SlimePlugin) plugin;
         ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("worlds-worker").build();
         this.worldsWorker = Executors.newSingleThreadExecutor(threadFactory);
     }
