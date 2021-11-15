@@ -24,7 +24,7 @@
 
 package dev.iiprocraft.sg.common.plugin.loader;
 
-public interface Registerable<T> {
+public interface Registry<T> {
     void register();
     void unregister();
     T getResult();
