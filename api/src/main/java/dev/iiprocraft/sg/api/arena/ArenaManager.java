@@ -43,11 +43,6 @@ package dev.iiprocraft.sg.api.arena;
         //TODO load arenas from whatever storage selected for this project
     }
 
-    public void setRandomItems(Set<Location> chests, List<ItemStack> allItems) {
-
-
-
-    }
 
     public Collection<? extends SGArena> getArenas() {
         return arenas.values();

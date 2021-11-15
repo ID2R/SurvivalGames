@@ -26,10 +26,10 @@ package dev.iiprocraft.sg.api.arena;
 
  import com.google.common.base.Objects;
  import dev.iiprocraft.sg.api.game.GameState;
+ import org.bukkit.Bukkit;
  import org.bukkit.Location;
  import org.bukkit.Material;
- import org.bukkit.block.Block;
- import org.bukkit.block.Chest;
+ import org.bukkit.inventory.Inventory;
  import org.bukkit.inventory.ItemStack;
 
  import java.util.*;
@@ -88,45 +88,6 @@ package dev.iiprocraft.sg.api.arena;
         return uniqueId;
     }
 
-    public static class ArenaVote {
-
-        /**
-         * @author Mqzn
-         */
-
-        private final UUID voter;
-        private final SGArena arena;
-
-        public ArenaVote(UUID voter, SGArena arena) {
-            this.voter = voter;
-            this.arena = arena;
-        }
-
-        public SGArena getArena() {
-            return arena;
-        }
-
-        public UUID getVoter() {
-            return voter;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (!(o instanceof ArenaVote)) return false;
-            ArenaVote arenaVote = (ArenaVote) o;
-            return Objects.equal(getVoter(), arenaVote.getVoter()) &&
-                    Objects.equal(getArena(), arenaVote.getArena());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hashCode(getVoter(), getArena());
-        }
-    }
-
-
-
 
     @Override
     public boolean equals(Object o) {
@@ -156,7 +117,7 @@ package dev.iiprocraft.sg.api.arena;
 
 
         private final List<ItemStack> items;
-        private final Map<Location, List<Integer>> slots;
+        private final HashMap<Location, Inventory> slots;
         private final static int CHEST_SIZE = 26;
 
         public ItemsRandomizer(Set<Location> chests, List<ItemStack> items) {
@@ -164,7 +125,7 @@ package dev.iiprocraft.sg.api.arena;
 
             slots = new HashMap<>();
             for(Location loc : chests) {
-                slots.putIfAbsent(loc, new ArrayList<>());
+                slots.putIfAbsent(loc, Bukkit.createInventory(null, 27, "A Chest"));
             }
             Collections.shuffle(items);
         }
@@ -178,18 +139,6 @@ package dev.iiprocraft.sg.api.arena;
             return slots.keySet();
         }
 
-        private void placeItemInChest(int slot, ItemStack item, Location location) {
-
-            if(slot > CHEST_SIZE) return;
-
-            Block block = location.getWorld().getBlockAt(location);
-            if(block.getType() != Material.CHEST) return;
-
-            Chest chest = (Chest)block;
-            chest.getInventory().setItem(slot, item);
-
-            chest.update();
-        }
 
         public void process() {
 
@@ -197,39 +146,29 @@ package dev.iiprocraft.sg.api.arena;
                 List<ItemStack> itemsForChest = items.subList(0, CHEST_SIZE);
                 items.removeIf(itemsForChest::contains);
 
+                Inventory newInv = slots.get(location);
                 for(ItemStack item : itemsForChest) {
-                    this.placeItemInChest(this.getNextRandomSlot(location), item, location);
+                    int slot = this.getNextRandomSlot(location);
+                    if(slot > CHEST_SIZE) continue;
+
+                    newInv.setItem(slot, item);
                 }
+                slots.compute(location, (loc, inv) -> newInv);
             }
 
         }
 
         private int getNextRandomSlot(Location chest) {
-            List<Integer> slots = this.slots.get(chest);
+            Inventory slots = this.slots.get(chest);
 
             int result = ThreadLocalRandom.current().nextInt(0, CHEST_SIZE);
-            while (slots.contains(result)) {
+            while (slots.getItem(result) != null && slots.getItem(result).getType() != Material.AIR) {
                 result = ThreadLocalRandom.current().nextInt(0, CHEST_SIZE);
             }
 
-            slots.add(result);
             this.slots.put(chest, slots);
 
             return result;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (!(o instanceof ItemsRandomizer)) return false;
-            ItemsRandomizer that = (ItemsRandomizer) o;
-            return Objects.equal(items, that.items) &&
-                    Objects.equal(slots, that.slots);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hashCode(items, slots);
         }
 
     }

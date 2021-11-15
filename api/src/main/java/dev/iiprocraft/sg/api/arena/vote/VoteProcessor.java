@@ -1,10 +1,12 @@
 package dev.iiprocraft.sg.api.arena.vote;
 
 import dev.iiprocraft.sg.api.SurvivalGamesAPI;
-import dev.iiprocraft.sg.api.game.GameState;
 import dev.iiprocraft.sg.api.arena.SGArena;
-import dev.iiprocraft.sg.api.arena.SGArena.ArenaVote;
-import java.util.*;
+import dev.iiprocraft.sg.api.game.GameState;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class VoteProcessor {
@@ -14,50 +16,48 @@ public class VoteProcessor {
      * @purpose processes votes for arenas
      */
 
-    private final Map<String, Set<ArenaVote>> votes;
+    private final HashMap<String, Integer> votes;
 
     public VoteProcessor() {
         votes = new HashMap<>();
         SurvivalGamesAPI.getAPI().getArenaManager()
                 .getArenas().stream()
                 .filter(arena -> arena.getState() == GameState.WAITING)
-                .forEach(arena -> votes.put(arena.getName(), new HashSet<>()));
+                .forEach(arena -> votes.put(arena.getName(), 0));
     }
 
-    public void addVote(UUID voter, String arena) {
-        votes.computeIfPresent(arena, (k, v) -> {
-            v.add(new ArenaVote(voter, SurvivalGamesAPI.getAPI()
-                    .getArenaManager().getArena(arena)));
-            return v;
+    public void addVote(String arena) {
+        votes.computeIfPresent(arena, (name, votes) -> {
+            votes++;
+            return votes;
         });
     }
 
-    public void removeVote(UUID voter, String arena) {
-        votes.computeIfPresent(arena, (k, v) -> {
-            v.removeIf(arenaVote -> arenaVote.getVoter().equals(voter)
-                    && arenaVote.getArena().getName().equalsIgnoreCase(arena));
-            return v;
+    public void removeVote(String arena) {
+        votes.computeIfPresent(arena, (name, votes) -> {
+            votes--;
+            return votes;
         });
     }
 
 
-    public Set<ArenaVote> getVotesOf(String arenaName) {
-        return votes.getOrDefault(arenaName, Collections.emptySet());
+    public int getVotesOf(String arenaName) {
+        return votes.getOrDefault(arenaName, 0);
     }
 
     public SGArena getVotedArena() {
 
         Optional<String> arenaName;
-        Optional<Integer> optional = votes.values().stream()
-                .map((Set::size)).max((o, o2) -> o2-o);
+        Optional<Integer> optional = votes.values()
+                .stream().max((o, o2) -> o2-o);
 
         arenaName = !optional.isPresent()
                 ? Optional.ofNullable(new ArrayList<>(votes.keySet())
                 .get(ThreadLocalRandom.current().nextInt(votes.size())))
                 : optional.map((max) -> {
 
-            for(Map.Entry<String, Set<ArenaVote>> entry: votes.entrySet()) {
-                if(entry.getValue().size() == max) {
+            for(Map.Entry<String, Integer> entry: votes.entrySet()) {
+                if(entry.getValue().intValue() == max.intValue()) {
                     return entry.getKey();
                 }
             }
