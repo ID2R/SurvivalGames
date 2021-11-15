@@ -39,7 +39,7 @@ public class Storage {
                 break;
             }
             case JSON: {
-                storageRepository = new JSONStorage();
+                storageRepository = new JSONStorage(null);
             }
         }
     }
