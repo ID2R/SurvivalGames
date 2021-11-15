@@ -31,6 +31,7 @@ public class SurvivalGamesAPI {
 
     private static  SurvivalGamesAPI API = new SurvivalGamesAPI();
 
+
     private final PlayerManager playerManager;
     private final ArenaManager arenaManager;
 

@@ -187,6 +187,8 @@ package dev.iiprocraft.sg.api.arena;
 
             Chest chest = (Chest)block;
             chest.getInventory().setItem(slot, item);
+
+            chest.update();
         }
 
         public void process() {
