@@ -35,10 +35,11 @@ public class SurvivalGamesAPI {
     private final PlayerManager playerManager;
     private final ArenaManager arenaManager;
 
-
     public SurvivalGamesAPI() {
+
         this.playerManager = new PlayerManager();
         this.arenaManager = new ArenaManager();
+
     }
 
     public static SurvivalGamesAPI getAPI() {
