@@ -17,7 +17,7 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package dev.iiprocraft.sg.common.plugin;
+package dev.iiprocraft.sg.common.plugin.loader;
 
 /**
  * @author iiProCraft
@@ -26,9 +26,9 @@ public interface PluginLoader {
     /**
      * This method will be executed when the plugin enables
      */
-    void load();
+    void enable();
     /**
      * This method will be executed when the plugin disables
      */
-    void unload();
+    void disable();
 }
