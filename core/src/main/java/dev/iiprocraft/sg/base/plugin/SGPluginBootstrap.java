@@ -45,7 +45,7 @@ public class SGPluginBootstrap implements PluginLoader {
     private final JavaPlugin loader;
 
     private final ArenaManager arenaManager = new ArenaManager();
-    private final PlayerManager playerManager = new PlayerManager();
+    private final PlayerManager playerManager = new PlayerManager(this);
     private final ConfigHandler configHandler = new ConfigHandler();
     private final Storage storage = new Storage();
 
