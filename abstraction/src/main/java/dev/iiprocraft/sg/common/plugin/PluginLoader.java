@@ -19,7 +19,16 @@
 
 package dev.iiprocraft.sg.common.plugin;
 
+/**
+ * @author iiProCraft
+ */
 public interface PluginLoader {
+    /**
+     * This method will be executed when the plugin enables
+     */
     void load();
+    /**
+     * This method will be executed when the plugin disables
+     */
     void unload();
 }
