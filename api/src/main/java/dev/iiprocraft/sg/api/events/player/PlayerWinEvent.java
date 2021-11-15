@@ -22,7 +22,9 @@
  * SOFTWARE.
  */
 
-package dev.iiprocraft.sg.api.events.spigot.player;
+package dev.iiprocraft.sg.api.events.player;
 
-public class PlayerWinEvent {
+ import dev.iiprocraft.sg.api.events.AbstractEvent;
+
+ public class PlayerWinEvent extends AbstractEvent {
 }
