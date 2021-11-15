@@ -13,5 +13,7 @@ public interface SGPlayerStatistics {
 
     int getCoins();
 
+    int getPlayed();
+
     // Probably prestige too
 }

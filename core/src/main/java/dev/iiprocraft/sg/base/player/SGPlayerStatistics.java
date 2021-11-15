@@ -8,5 +8,5 @@ import lombok.Data;
 @Data
 public class SGPlayerStatistics implements dev.iiprocraft.sg.api.player.SGPlayerStatistics {
 
-    private int wins, loses, kills, coins;
+    private int wins, loses, kills, coins, played;
 }
