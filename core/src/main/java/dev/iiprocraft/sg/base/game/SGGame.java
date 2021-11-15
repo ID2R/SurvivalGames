@@ -23,7 +23,7 @@
  * SOFTWARE.
  */
 
-package dev.iiprocraft.sg.api.game;
+package dev.iiprocraft.sg.base.game;
 
 public class SGGame {
 }
