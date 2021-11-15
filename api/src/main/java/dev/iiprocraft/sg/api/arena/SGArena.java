@@ -116,22 +116,21 @@ package dev.iiprocraft.sg.api.arena;
          */
 
 
-        private final List<ItemStack> items;
+        private final RandomList<ItemStack> items;
         private final HashMap<Location, Inventory> slots;
         private final static int CHEST_SIZE = 26;
 
-        public ItemsRandomizer(Set<Location> chests, List<ItemStack> items) {
+        public ItemsRandomizer(Set<Location> chests, RandomList<ItemStack> items) {
             this.items = items;
 
             slots = new HashMap<>();
             for(Location loc : chests) {
                 slots.putIfAbsent(loc, Bukkit.createInventory(null, 27, "A Chest"));
             }
-            Collections.shuffle(items);
         }
 
 
-        public List<ItemStack> getRemainingItems() {
+        public RandomList<ItemStack> getRemainingItems() {
             return items;
         }
 
@@ -143,16 +142,16 @@ package dev.iiprocraft.sg.api.arena;
         public void process() {
 
             for(Location location : slots.keySet()) {
-                List<ItemStack> itemsForChest = items.subList(0, CHEST_SIZE);
-                items.removeIf(itemsForChest::contains);
 
                 Inventory newInv = slots.get(location);
-                for(ItemStack item : itemsForChest) {
-                    int slot = this.getNextRandomSlot(location);
-                    if(slot > CHEST_SIZE) continue;
 
-                    newInv.setItem(slot, item);
+
+                for (int i = 0; i < CHEST_SIZE+1 ; i++) {
+                    int slot = this.getNextRandomSlot(location);
+                    newInv.setItem(slot, items.next());
+
                 }
+
                 slots.compute(location, (loc, inv) -> newInv);
             }
 
