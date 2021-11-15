@@ -13,9 +13,12 @@ import java.util.UUID;
  * @author DirectPlan
  */
 @Data
-public class MongoStorage implements StorageRepository {
+public class MongoStorage extends StorageRepository {
 
-    private final ConnectionCredentials credentials;
+
+    public MongoStorage(ConnectionCredentials credentials) {
+        super(credentials);
+    }
 
     @Override
     public void connect() {

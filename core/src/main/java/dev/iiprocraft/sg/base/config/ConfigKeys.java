@@ -69,4 +69,20 @@ public enum ConfigKeys {
         String message = getString(replacements);
         sender.sendMessage(message);
     }
+
+    public Object getDefaultValue() {
+        return defaultValue;
+    }
+
+    public String getConfigFile() {
+        return configFile;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setDefaultValue(Object defaultValue) {
+        this.defaultValue = defaultValue;
+    }
 }

@@ -13,9 +13,12 @@ import java.util.UUID;
  * @author DirectPlan
  */
 @Data
-public class MySQLStorage implements StorageRepository {
+public class MySQLStorage extends StorageRepository {
 
-    private final ConnectionCredentials credentials;
+
+    public MySQLStorage(ConnectionCredentials credentials) {
+        super(credentials);
+    }
 
     @Override
     public void connect() {

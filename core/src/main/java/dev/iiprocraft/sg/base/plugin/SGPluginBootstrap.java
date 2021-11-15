@@ -49,6 +49,10 @@ public class SGPluginBootstrap implements PluginLoader {
     private final ConfigHandler configHandler = new ConfigHandler();
     private final Storage storage = new Storage();
 
+    public SGPluginBootstrap(JavaPlugin loader) {
+        this.loader = loader;
+    }
+
     @Override
     public void enable() {
 
@@ -64,6 +68,22 @@ public class SGPluginBootstrap implements PluginLoader {
 
         configHandler.saveConfigurations();
         storage.close();
+    }
+
+    public Storage getStorage() {
+        return storage;
+    }
+
+    public ArenaManager getArenaManager() {
+        return arenaManager;
+    }
+
+    public PlayerManager getPlayerManager() {
+        return playerManager;
+    }
+
+    public JavaPlugin getLoader() {
+        return loader;
     }
 }
 

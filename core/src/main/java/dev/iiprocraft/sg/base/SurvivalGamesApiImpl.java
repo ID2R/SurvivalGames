@@ -14,6 +14,10 @@ public class SurvivalGamesApiImpl implements SurvivalGames {
     
     private final SGPluginBootstrap plugin;
 
+    public SurvivalGamesApiImpl(SGPluginBootstrap plugin) {
+        this.plugin = plugin;
+    }
+
     @Override
     public ArenaManager getArenaManager() {
         return plugin.getArenaManager();
