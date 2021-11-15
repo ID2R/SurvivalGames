@@ -92,5 +92,4 @@ public class SlimeWorldManagerAdapter implements WorldAdapter {
     public ExecutorService getWorker() {
         return worldsWorker;
     }
-
 }

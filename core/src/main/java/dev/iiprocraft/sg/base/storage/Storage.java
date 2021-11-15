@@ -7,6 +7,7 @@ import dev.iiprocraft.sg.base.storage.impl.MongoStorage;
 import dev.iiprocraft.sg.base.storage.impl.MySQLStorage;
 import dev.iiprocraft.sg.base.storage.misc.ConnectionCredentials;
 import dev.iiprocraft.sg.base.storage.misc.StorageMethod;
+
 import java.util.UUID;
 
 /**
@@ -14,7 +15,7 @@ import java.util.UUID;
  */
 public class Storage {
 
-    private final StorageRepository storageRepository;
+    private StorageRepository storageRepository;
 
     public Storage() {
 
@@ -25,7 +26,7 @@ public class Storage {
         String database = ConfigKeys.STORAGE_DATABASE.getString();
         int maximumPoolSize = ConfigKeys.STORAGE_MAXIMUM_POOL_SIZE.getInteger();
 
-        StorageMethod storageMethod = StorageMethod.fromStr(ConfigKeys.STORAGE_METHOD.getString());
+        StorageMethod storageMethod = StorageMethod.valueOf(ConfigKeys.STORAGE_METHOD.getString());
 
         ConnectionCredentials credentials = new ConnectionCredentials(host, username, password, database, port, maximumPoolSize);
         switch (storageMethod) {
@@ -38,11 +39,7 @@ public class Storage {
                 break;
             }
             case JSON: {
-                storageRepository = new JSONStorage(credentials);
-                break;
-            }
-            default : {
-                throw new IllegalArgumentException("Unknown Type of storage !");
+                storageRepository = new JSONStorage(null);
             }
         }
     }
@@ -52,7 +49,6 @@ public class Storage {
     }
 
     public SGPlayer loadPlayer(UUID uuid) {
-
         return storageRepository.loadPlayer(uuid); /* TODO: Async this operation */
     }
 
