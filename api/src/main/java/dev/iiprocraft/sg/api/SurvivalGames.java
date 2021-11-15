@@ -24,35 +24,13 @@
   */
 package dev.iiprocraft.sg.api;
 
-import dev.iiprocraft.sg.api.arena.ArenaManager;
-import dev.iiprocraft.sg.api.player.PlayerManager;
 
-public class SurvivalGamesAPI {
+ import dev.iiprocraft.sg.api.arena.ArenaManager;
+ import dev.iiprocraft.sg.api.player.PlayerManager;
 
-    private static  SurvivalGamesAPI API = new SurvivalGamesAPI();
+ public interface SurvivalGames {
 
-    private final PlayerManager playerManager;
-    private final ArenaManager arenaManager;
+    ArenaManager getArenaManager();
 
-
-    public SurvivalGamesAPI() {
-        this.playerManager = new PlayerManager();
-        this.arenaManager = new ArenaManager();
-    }
-
-    public static SurvivalGamesAPI getAPI() {
-        if(API == null) {
-            API = new SurvivalGamesAPI();
-        }
-        return API;
-    }
-
-    public ArenaManager getArenaManager() {
-        return arenaManager;
-    }
-
-    public PlayerManager getPlayerManager() {
-        return playerManager;
-    }
-
+    PlayerManager getPlayerManager();
 }
