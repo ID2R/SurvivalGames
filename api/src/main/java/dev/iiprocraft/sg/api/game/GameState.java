@@ -1,7 +1,8 @@
  /*
  * MIT License
  *
- * Copyright (c) 2021 iiProCraft & contributors
+ * Copyright (c) 2021 iiProCraft
+ * Copyright (c) 2021 Invvk
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,8 +23,8 @@
  * SOFTWARE.
  */
 
-package dev.iiprocraft.sg.api.arena;
+package dev.iiprocraft.sg.api.game;
 
-public enum ArenaState {
+public enum GameState {
     WAITING, STARTING, PLAYING, DEATH_MATCH, RESTARTING;
 }

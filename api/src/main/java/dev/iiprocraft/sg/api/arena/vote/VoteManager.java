@@ -1,7 +1,7 @@
 package dev.iiprocraft.sg.api.arena.vote;
 
 import dev.iiprocraft.sg.api.SurvivalGamesAPI;
-import dev.iiprocraft.sg.api.arena.ArenaState;
+import dev.iiprocraft.sg.api.game.GameState;
 import dev.iiprocraft.sg.api.arena.SGArena;
 import dev.iiprocraft.sg.api.arena.SGArena.ArenaVote;
 import java.util.*;
@@ -15,7 +15,7 @@ public class VoteManager {
         votes = new HashMap<>();
         SurvivalGamesAPI.getAPI().getArenaManager()
                 .getArenas().stream()
-                .filter(arena -> arena.getState() != ArenaState.WAITING)
+                .filter(arena -> arena.getState() != GameState.WAITING)
                 .forEach(arena -> votes.put(arena.getName(), new HashSet<>()));
     }
 

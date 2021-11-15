@@ -25,6 +25,7 @@
 package dev.iiprocraft.sg.api.arena;
 
  import com.google.common.base.Objects;
+ import dev.iiprocraft.sg.api.game.GameState;
 
  import java.util.UUID;
 
@@ -33,7 +34,7 @@ public class SGArena {
     private final String name;
     private String displayName;
     private  UUID uniqueId = UUID.randomUUID();
-    private ArenaState state = ArenaState.WAITING;
+    private GameState state = GameState.WAITING;
 
     public SGArena(String name) {
         this.name = name;
@@ -60,7 +61,7 @@ public class SGArena {
     }
 
 
-    public ArenaState getState() {
+    public GameState getState() {
         return state;
     }
 
@@ -69,7 +70,7 @@ public class SGArena {
     }
 
 
-    public void setState(ArenaState state) {
+    public void setState(GameState state) {
         this.state = state;
     }
 
