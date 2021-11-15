@@ -24,8 +24,13 @@
 
 package dev.iiprocraft.sg.api.arena;
 
+ import org.bukkit.Location;
+ import org.bukkit.inventory.ItemStack;
+
  import java.util.Collection;
+ import java.util.List;
  import java.util.Map;
+ import java.util.Set;
  import java.util.concurrent.ConcurrentHashMap;
 
  public class ArenaManager {
@@ -36,6 +41,12 @@ package dev.iiprocraft.sg.api.arena;
         this.arenas = new ConcurrentHashMap<>();
 
         //TODO load arenas from whatever storage selected for this project
+    }
+
+    public void setRandomItems(Set<Location> chests, List<ItemStack> allItems) {
+
+
+
     }
 
     public Collection<? extends SGArena> getArenas() {

@@ -7,15 +7,20 @@ import dev.iiprocraft.sg.api.arena.SGArena.ArenaVote;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class VoteManager {
+public class VoteProcessor {
+
+    /**
+     * @author Mqzn
+     * @purpose processes votes for arenas
+     */
 
     private final Map<String, Set<ArenaVote>> votes;
 
-    public VoteManager() {
+    public VoteProcessor() {
         votes = new HashMap<>();
         SurvivalGamesAPI.getAPI().getArenaManager()
                 .getArenas().stream()
-                .filter(arena -> arena.getState() != GameState.WAITING)
+                .filter(arena -> arena.getState() == GameState.WAITING)
                 .forEach(arena -> votes.put(arena.getName(), new HashSet<>()));
     }
 
@@ -47,10 +52,8 @@ public class VoteManager {
                 .map((Set::size)).max((o, o2) -> o2-o);
 
         arenaName = !optional.isPresent()
-
                 ? Optional.ofNullable(new ArrayList<>(votes.keySet())
                 .get(ThreadLocalRandom.current().nextInt(votes.size())))
-
                 : optional.map((max) -> {
 
             for(Map.Entry<String, Set<ArenaVote>> entry: votes.entrySet()) {
