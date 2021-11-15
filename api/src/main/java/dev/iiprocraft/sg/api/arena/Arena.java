@@ -69,6 +69,7 @@ public interface Arena {
 
                 for (int i = 0; i < CHEST_SIZE+1 ; i++) {
                     int slot = this.getNextRandomSlot(location);
+                    if(slot == -1) break;
                     newInv.setItem(slot, items.next());
 
                 }
@@ -80,7 +81,7 @@ public interface Arena {
 
         private int getNextRandomSlot(Location chest) {
             Inventory slots = this.slots.get(chest);
-
+            if(slots.firstEmpty() == -1) return -1;
             int result = ThreadLocalRandom.current().nextInt(0, CHEST_SIZE);
             while (slots.getItem(result) != null && slots.getItem(result).getType() != Material.AIR) {
                 result = ThreadLocalRandom.current().nextInt(0, CHEST_SIZE);
