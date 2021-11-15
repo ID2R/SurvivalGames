@@ -24,19 +24,23 @@
 
 package dev.iiprocraft.sg.base;
 
-import dev.iiprocraft.sg.base.plugin.SGPlugin;
+import dev.iiprocraft.sg.base.plugin.SGPluginBootstrap;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
  * @author iiProCraft
  */
-public class SGPreLoader extends JavaPlugin {
+public class SGPluginLoader extends JavaPlugin {
 
-    private SGPlugin plugin;
+    private final SGPluginBootstrap plugin = new SGPluginBootstrap(this);
 
     @Override
     public void onEnable() {
-        this.plugin = new SGPlugin(this);
+        plugin.enable();
     }
 
+    @Override
+    public void onDisable() {
+        plugin.disable();
+    }
 }
