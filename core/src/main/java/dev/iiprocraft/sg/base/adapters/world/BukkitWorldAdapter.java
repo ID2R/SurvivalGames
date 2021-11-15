@@ -22,24 +22,24 @@
  * SOFTWARE.
  */
 
-package dev.iiprocraft.sg.base.adapters;
+package dev.iiprocraft.sg.base.adapters.world;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
-import dev.iiprocraft.sg.api.arena.ArenaWorld;
-import dev.iiprocraft.sg.api.arena.adapter.WorldAdapter;
+import dev.iiprocraft.sg.base.game.arena.ArenaWorld;
+import dev.iiprocraft.sg.base.adapters.WorldAdapter;
 import org.bukkit.World;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 
-public class BukkitAdapter implements WorldAdapter {
+public class BukkitWorldAdapter implements WorldAdapter {
 
     private final ExecutorService worldsWorker;
 
-    public BukkitAdapter() {
+    public BukkitWorldAdapter() {
         ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("worlds-worker").build();
-        this.worldsWorker = Executors.newSingleThreadExecutor(threadFactory);
+        worldsWorker = Executors.newSingleThreadExecutor(threadFactory);
     }
 
     @Override
