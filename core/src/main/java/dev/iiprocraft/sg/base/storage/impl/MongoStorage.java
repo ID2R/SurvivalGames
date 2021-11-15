@@ -1,10 +1,12 @@
-package dev.iiprocraft.sg.api.storage.impl;
+package dev.iiprocraft.sg.base.storage.impl;
 
-import dev.iiprocraft.sg.api.player.SGPlayer;
-import dev.iiprocraft.sg.api.storage.StorageRepository;
-import dev.iiprocraft.sg.api.storage.misc.ConnectionCredentials;
+import dev.iiprocraft.sg.base.game.arena.SGArena;
+import dev.iiprocraft.sg.base.player.SGPlayer;
+import dev.iiprocraft.sg.base.storage.StorageRepository;
+import dev.iiprocraft.sg.base.storage.misc.ConnectionCredentials;
 import lombok.Data;
 
+import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -32,6 +34,16 @@ public class MongoStorage implements StorageRepository {
 
     @Override
     public void savePlayer(SGPlayer player) {
+
+    }
+
+    @Override
+    public Map<String, SGArena> loadArenas() {
+        return null;
+    }
+
+    @Override
+    public void saveArenas() {
 
     }
 }
