@@ -22,15 +22,18 @@
  * SOFTWARE.
  */
 
-package dev.iiprocraft.sg.api.arena.adapter;
+package dev.iiprocraft.sg.base.adapters;
 
-import dev.iiprocraft.sg.api.arena.ArenaWorld;
+import dev.iiprocraft.sg.base.game.arena.ArenaWorld;
 import org.bukkit.World;
 
 import java.util.concurrent.ExecutorService;
 
 public interface WorldAdapter {
+
     World createCopy(ArenaWorld arenaWorld);
+
     World loadWorld(String name);
+
     ExecutorService getWorker();
 }

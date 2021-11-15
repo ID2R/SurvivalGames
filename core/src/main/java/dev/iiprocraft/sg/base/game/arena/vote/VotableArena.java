@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package dev.iiprocraft.sg.api.arena.vote;
+package dev.iiprocraft.sg.base.game.arena.vote;
 
 import org.bukkit.entity.Player;
 
@@ -30,8 +30,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VotableArena {
+
     private final String name;
     private final List<Player> voters;
+
     public VotableArena(String name) {
         this.name = name;
         this.voters = new ArrayList<>();

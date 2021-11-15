@@ -1,7 +1,7 @@
-package dev.iiprocraft.sg.api.storage.impl;
+package dev.iiprocraft.sg.base.storage.impl;
 
-import dev.iiprocraft.sg.api.player.SGPlayer;
-import dev.iiprocraft.sg.api.storage.StorageRepository;
+import dev.iiprocraft.sg.base.player.SGPlayer;
+import dev.iiprocraft.sg.base.storage.StorageRepository;
 
 import java.util.UUID;
 

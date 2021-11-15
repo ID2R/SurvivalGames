@@ -1,28 +1,23 @@
-package dev.iiprocraft.sg.api.arena.vote;
+package dev.iiprocraft.sg.base.game.arena.vote;
 
-import dev.iiprocraft.sg.api.SurvivalGamesAPI;
-import dev.iiprocraft.sg.api.game.GameState;
-import dev.iiprocraft.sg.api.arena.SGArena;
-import dev.iiprocraft.sg.api.arena.SGArena.ArenaVote;
+import dev.iiprocraft.sg.base.game.arena.SGArena;
+import dev.iiprocraft.sg.base.game.arena.SGArena.ArenaVote;
+import dev.iiprocraft.sg.base.management.ArenaManager;
+import lombok.Data;
+
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
+@Data
 public class VoteManager {
 
-    private final Map<String, Set<ArenaVote>> votes;
+    private final Map<String, Set<ArenaVote>> votes = new HashMap<>();
 
-    public VoteManager() {
-        votes = new HashMap<>();
-        SurvivalGamesAPI.getAPI().getArenaManager()
-                .getArenas().stream()
-                .filter(arena -> arena.getState() != GameState.WAITING)
-                .forEach(arena -> votes.put(arena.getName(), new HashSet<>()));
-    }
+    private final ArenaManager arenaManager;
 
     public void addVote(UUID voter, String arena) {
         votes.computeIfPresent(arena, (k, v) -> {
-            v.add(new ArenaVote(voter, SurvivalGamesAPI.getAPI()
-                    .getArenaManager().getArena(arena)));
+            v.add(new ArenaVote(voter, arenaManager.getArena(arena)));
             return v;
         });
     }
@@ -34,7 +29,6 @@ public class VoteManager {
             return v;
         });
     }
-
 
     public Set<ArenaVote> getVotesOf(String arenaName) {
         return votes.getOrDefault(arenaName, Collections.emptySet());
@@ -61,8 +55,7 @@ public class VoteManager {
             return null;
         });
 
-        return arenaName.map(name -> SurvivalGamesAPI.getAPI()
-                .getArenaManager().getArena(name)).orElse(null);
+        return arenaName.map(arenaManager::getArena).orElse(null);
 
     }
 

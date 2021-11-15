@@ -1,4 +1,4 @@
-package dev.iiprocraft.sg.api.storage;
+package dev.iiprocraft.sg.base.storage;
 
 /**
  * @author DirectPlan
