@@ -1,4 +1,4 @@
-package dev.iiprocraft.sg.api.storage.misc;
+package dev.iiprocraft.sg.base.storage.misc;
 
 import lombok.Data;
 
