@@ -2,10 +2,11 @@ package dev.iiprocraft.sg.base.storage;
 
 import dev.iiprocraft.sg.base.config.ConfigKeys;
 import dev.iiprocraft.sg.base.player.SGPlayer;
+import dev.iiprocraft.sg.base.storage.impl.JSONStorage;
 import dev.iiprocraft.sg.base.storage.impl.MongoStorage;
 import dev.iiprocraft.sg.base.storage.impl.MySQLStorage;
-import dev.iiprocraft.sg.base.storage.impl.YAMLStorage;
 import dev.iiprocraft.sg.base.storage.misc.ConnectionCredentials;
+import dev.iiprocraft.sg.base.storage.misc.StorageMethod;
 
 import java.util.UUID;
 
@@ -31,14 +32,14 @@ public class Storage {
         switch (storageMethod) {
             case MYSQL: {
                 storageRepository = new MySQLStorage(credentials);
-                return;
+                break;
             }
             case MONGODB: {
                 storageRepository = new MongoStorage(credentials);
-                return;
+                break;
             }
-            case YAML: {
-                storageRepository = new YAMLStorage();
+            case JSON: {
+                storageRepository = new JSONStorage();
             }
         }
     }
@@ -54,8 +55,6 @@ public class Storage {
     public void savePlayer(SGPlayer player) {
         storageRepository.savePlayer(player); /* TODO: Async this operation */
     }
-
-
 
     public void close() {
         storageRepository.close();
