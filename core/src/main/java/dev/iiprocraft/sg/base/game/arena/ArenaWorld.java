@@ -22,24 +22,19 @@
  * SOFTWARE.
  */
 
-package dev.iiprocraft.sg.api.arena;
+package dev.iiprocraft.sg.base.game.arena;
 
+import lombok.Data;
 import org.bukkit.Location;
 import org.bukkit.World;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
  public class ArenaWorld {
-     private final List<Location> spawns;
-     private World world;
+
+     private final World world;
      private final String name;
-     public ArenaWorld(String name, World world) {
-         this.name = name;
-         this.world = world;
-         this.spawns = new ArrayList<>();
-     }
-     public World getWorld() {
-         return world;
-     }
+     private final List<Location> spawnLocations = new ArrayList<>();
 }
