@@ -32,7 +32,7 @@ For years ago, a lot of players want a SurvivalGames system like HiveMC's one an
 ## Features
 
 Here's some of our features:
-* Support for MySQL, MongoDB, YAML and SQLite storage providers
+* Support for MySQL, MongoDB, JSON and SQLite storage providers
 * Redis support for bungee mode
 * Single and Multiple map system (Multiple means you can `/vote` for map like HiveMC)
 * SlimeWorldManager support for better map loading and restore system
