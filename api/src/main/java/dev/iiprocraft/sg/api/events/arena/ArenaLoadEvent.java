@@ -22,7 +22,9 @@
  * SOFTWARE.
  */
 
-package dev.iiprocraft.sg.api.events.spigot.arena;
+package dev.iiprocraft.sg.api.events.arena;
 
-public class ArenaLoadEvent {
+ import dev.iiprocraft.sg.api.events.AbstractEvent;
+
+ public class ArenaLoadEvent extends AbstractEvent {
 }
