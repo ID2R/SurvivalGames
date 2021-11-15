@@ -22,7 +22,10 @@
  * SOFTWARE.
  */
 
-package dev.iiprocraft.sg.common.plugin.spigot;
+package dev.iiprocraft.sg.api.events.arena;
 
-public class PluginManager {
+import dev.iiprocraft.sg.api.events.AbstractEvent;
+
+public class ArenaVoteWinEvent extends AbstractEvent {
+
 }
