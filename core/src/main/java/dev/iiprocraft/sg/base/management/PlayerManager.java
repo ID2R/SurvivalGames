@@ -1,40 +1,38 @@
 package dev.iiprocraft.sg.base.management;
 
 import dev.iiprocraft.sg.base.player.SGPlayer;
+import dev.iiprocraft.sg.base.plugin.SGPluginBootstrap;
+import lombok.Data;
 
-import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.function.Function;
 
+@Data
 public class PlayerManager implements dev.iiprocraft.sg.api.player.PlayerManager {
 
-    private final Map<UUID, SGPlayer> players = new ConcurrentHashMap<>();
+    private final ConcurrentHashMap<UUID, SGPlayer> players = new ConcurrentHashMap<>();
+
+    private final SGPluginBootstrap plugin;
 
     @Override
     public SGPlayer getSGPlayer(UUID id) {
         return players.get(id);
     }
 
-    public void updatePlayerWith(SGPlayer player, Function<SGPlayer, SGPlayer> update) {
-        players.computeIfPresent(player.getId(), (k, v) -> update.apply(v));
-
-        //TODO update data into database
-        //TODO Should be synchronized for performance
-        /* synchronized(mainInstance/apiInstance) {
-                //core.getStorage().update();
-            }
-        */
-
+    public SGPlayer loadPlayer(UUID uuid) {
+        SGPlayer sgPlayer = getSGPlayer(uuid);
+        if(sgPlayer == null) {
+            sgPlayer = plugin.getStorage().loadPlayer(uuid);
+        }
+        return sgPlayer;
     }
 
-    public void insertPlayer(UUID id) {
-        //TODO SGPlayer player = getStorage().loadPlayer(id);
-        //TODO players.putIfAbsent(id, player);
+    public void savePlayer(SGPlayer sgPlayer) {
+        plugin.getStorage().savePlayer(sgPlayer);
     }
 
-    public void remove(UUID id) {
-        players.remove(id);
+    public void saveAndRemove(UUID uuid) {
+        SGPlayer sgPlayer = players.remove(uuid);
+        savePlayer(sgPlayer);
     }
-
 }
