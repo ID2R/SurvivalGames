@@ -1,7 +1,8 @@
 /*
  * MIT License
  *
- * Copyright (c) 2021 iiProCraft & contributors
+ * Copyright (c) 2021 iiProCraft
+ * Copyright (c) 2021 Invvk
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,15 +23,25 @@
  * SOFTWARE.
  */
 
-package dev.iiprocraft.sg.api.arena.adapter.impl;
+package dev.iiprocraft.sg.base.adapters;
 
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import dev.iiprocraft.sg.api.arena.ArenaWorld;
 import dev.iiprocraft.sg.api.arena.adapter.WorldAdapter;
 import org.bukkit.World;
 
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
 
 public class BukkitAdapter implements WorldAdapter {
+
+    private final ExecutorService worldsWorker;
+
+    public BukkitAdapter() {
+        ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("worlds-worker").build();
+        this.worldsWorker = Executors.newSingleThreadExecutor(threadFactory);
+    }
 
     @Override
     public World createCopy(ArenaWorld arenaWorld) {
@@ -44,6 +55,6 @@ public class BukkitAdapter implements WorldAdapter {
 
     @Override
     public ExecutorService getWorker() {
-        return null;
+        return worldsWorker;
     }
 }
