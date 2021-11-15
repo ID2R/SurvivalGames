@@ -22,31 +22,33 @@
  * SOFTWARE.
  */
 
-package dev.iiprocraft.sg.base.plugin;
+package dev.iiprocraft.sg.base.management;
 
-import dev.iiprocraft.sg.base.SGPreLoader;
-import dev.iiprocraft.sg.common.plugin.PluginLoader;
+ import dev.iiprocraft.sg.api.arena.Arena;
+ import dev.iiprocraft.sg.base.game.arena.SGArena;
 
-/**
- * @author iiProCraft
- */
-public class SGPlugin implements PluginLoader {
+ import java.util.Collection;
+ import java.util.Map;
+ import java.util.concurrent.ConcurrentHashMap;
 
-    private SGPreLoader main;
+ public class ArenaManager implements dev.iiprocraft.sg.api.arena.ArenaManager {
 
-    public SGPlugin(SGPreLoader main) {
-        this.main = main;
+    private final Map<String, SGArena> arenas;
+
+    public ArenaManager() {
+        this.arenas = new ConcurrentHashMap<>();
+
+        // TODO load arenas from whatever storage selected for this project
+        // DirectPlan: no u
     }
 
-    /**
-     * This method is inherited from PluginLoader interface
-     */
     @Override
-    public void load() {
-     //TODO LOAD
+    public Collection<? extends Arena> getArenas() {
+        return arenas.values();
     }
+
     @Override
-    public void unload() {
-     //TODO UNLOAD
+    public SGArena getArena(String arenaName) {
+        return arenas.get(arenaName);
     }
 }
