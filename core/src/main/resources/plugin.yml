@@ -1,0 +1,9 @@
+name: SurvivalGames
+authors:
+  - iiProCraft
+  - Mqzn
+  - DirectPlan
+  - Invvk
+  - SlawPing
+version: ${project.version}
+main: dev.iiprocraft.sg.base.SGPluginLoader

@@ -25,7 +25,6 @@
   </p>
 </div>
 
-
 ## About This Project
 
 For years ago, a lot of players want a SurvivalGames system like HiveMC's one and since HiveMC closed at April 15, 2021, there is not another place to play their games. So I decided to recreate their game-modes for free and let other developers modify it as they want, that's why it's open source.
