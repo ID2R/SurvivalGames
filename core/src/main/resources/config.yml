@@ -10,8 +10,6 @@ options:
       - SG02L
     server-name: 'SG01'
     auto-scale: false
-  storage:
-    method: SQLITE # Available: MONGO, MYSQL, SQLITE, JSON
     json:
       directory: '$ROOTDIR/players/'
     sqlite:
@@ -22,23 +20,60 @@ options:
     random-vote: true
     vote-algorithm:
       winner-arena-sort: GET_FIRST_ARENA_LIST
-connections:
-  redis: # It's used to communicate between servers, use it for better performance
+
+# Storage method options:
+# 
+# Remote databases:
+# - MySQL
+# - MongoDB
+#
+# Local database (Do not require any extra configuration):
+# - SQLITE
+# - JSON
+
+storage-method: SQLITE
+
+storage:
+
+  # The address for the database
+  # Database port will be used by default (MongoDB: 27017, MySQL: 3306)
+  # Add "port:<your_custom_port>" if differs
+  host: 127.0.0.1
+  
+  # The database where all of survivalgames data will be stored in
+  database: survivalgames
+  
+  # Connection credentials
+  username: 'username'
+  password: 'password'
+  
+  # Enable this if you want to increase your database security
+  # by encrypting all transactions that are being transmitted between the client and the server
+  # however, enabling will slow the database performance
+  use-ssl: false
+  
+  # Maximum size for the MySQL Connection Pool (currently using HikariCP for connection pooling)
+  # More information can be found here: https://github.com/brettwooldridge/HikariCP/wiki/About-Pool-Sizing  
+  maximum-pool-size: 10
+  
+  
+messaging:
+  redis:
+    # To whether enable this messaging feature or not
+    # You may want to enable if you want to sync your survival games servers
     enabled: false
-    host: 0.0.0.0:6379
+    
+    # The address for the database
+    # Database port which is 6379 will be used by default
+    # Add "port:<your_custom_port>" if differs
+    host: 127.0.0.1
+    
+    # The channels which will be used for communication
     channels:
       servers: 'sg_servers'
+    
+    # Enable authentication, if there are credentials configured
     authentication:
-      acl-auth: false
-      username: 'redisUser'
-      password: 'YeetyPa@asW0rD'
-  mysql:
-    host: 0.0.0.0:3306
-    database: survivalgames
-    table-prefix: 'sg_'
-    use-ssl: false
-    authentication:
-      username: 'root'
-      password: 'yeetyP@ssw0rd'
-  mongodb:
-    host: 0.0.0.0:27017
+      enabled: false
+      username: 'username'
+      password: 'password'
