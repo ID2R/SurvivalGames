@@ -7,8 +7,8 @@ import dev.iiprocraft.sg.base.storage.impl.MongoStorage;
 import dev.iiprocraft.sg.base.storage.impl.MySQLStorage;
 import dev.iiprocraft.sg.base.storage.misc.ConnectionCredentials;
 import dev.iiprocraft.sg.base.storage.misc.StorageMethod;
-import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+
 import java.util.UUID;
 
 /**
@@ -16,9 +16,13 @@ import java.util.UUID;
  */
 public final class Storage {
 
-    private final StorageRepository storageRepository;
+    private StorageRepository storageRepository;
+    private final JavaPlugin loader;
+    private final StorageMethod storageMethod;
 
     public Storage(JavaPlugin loader) {
+
+        this.loader = loader;
 
         String host = ConfigKeys.STORAGE_HOST.getString();
         int port = ConfigKeys.STORAGE_PORT.getInteger();
@@ -27,7 +31,7 @@ public final class Storage {
         String database = ConfigKeys.STORAGE_DATABASE.getString();
         int maximumPoolSize = ConfigKeys.STORAGE_MAXIMUM_POOL_SIZE.getInteger();
 
-        StorageMethod storageMethod = StorageMethod.fromStr(ConfigKeys.STORAGE_METHOD.getString());
+        this.storageMethod = StorageMethod.valueOf(ConfigKeys.STORAGE_METHOD.getString());
 
         ConnectionCredentials credentials = new ConnectionCredentials(host, username, password, database, port, maximumPoolSize);
         switch (storageMethod) {
@@ -40,13 +44,13 @@ public final class Storage {
                 break;
             }
             case JSON: {
-                storageRepository = new JSONStorage(null);
-            }
-            default: {
-                Bukkit.getPluginManager().disablePlugin(loader);
-                throw new IllegalArgumentException("Unknown Storage Type inserted !");
+                storageRepository = new JSONStorage();
             }
         }
+    }
+
+    public StorageMethod getStorageMethod() {
+        return storageMethod;
     }
 
     public void connect() {
