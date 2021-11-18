@@ -1,5 +1,6 @@
 package dev.iiprocraft.sg.api.arena;
 
+import dev.iiprocraft.sg.api.util.RandomList;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
