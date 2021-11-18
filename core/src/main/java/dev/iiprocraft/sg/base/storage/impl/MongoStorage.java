@@ -12,7 +12,6 @@ import java.util.UUID;
 /**
  * @author DirectPlan
  */
-@Data
 public class MongoStorage extends StorageRepository {
 
 
@@ -37,16 +36,6 @@ public class MongoStorage extends StorageRepository {
 
     @Override
     public void savePlayer(SGPlayer player) {
-
-    }
-
-    @Override
-    public Map<String, SGArena> loadArenas() {
-        return null;
-    }
-
-    @Override
-    public void saveArenas() {
 
     }
 }
