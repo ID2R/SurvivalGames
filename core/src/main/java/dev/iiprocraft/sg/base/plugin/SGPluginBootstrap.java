@@ -45,13 +45,14 @@ public class SGPluginBootstrap implements PluginLoader {
     private final JavaPlugin loader;
 
     private final ArenaManager arenaManager = new ArenaManager();
-    private final PlayerManager playerManager = new PlayerManager();
+    private final PlayerManager playerManager;
     private final ConfigHandler configHandler = new ConfigHandler();
     private final Storage storage;
 
     public SGPluginBootstrap(JavaPlugin loader) {
         this.loader = loader;
         storage = new Storage(loader);
+        playerManager = new PlayerManager(this);
     }
 
     @Override

@@ -14,6 +14,10 @@ public class PlayerManager implements dev.iiprocraft.sg.api.player.PlayerManager
 
     private final SGPluginBootstrap plugin;
 
+    public PlayerManager(SGPluginBootstrap plugin) {
+        this.plugin = plugin;
+    }
+
     @Override
     public SGPlayer getSGPlayer(UUID id) {
         return players.get(id);
