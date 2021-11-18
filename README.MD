@@ -49,8 +49,8 @@ We have multiple ways to run the plugin:
 
 If you want to run this plugin with singleton server, there are two ways to run the plugin:
 
-* Bungee mode with auto-scale enabled: the plugin will run multiple arena processes with 1 minecraft instance. (Redis is required to be enabled)
-* Bungee mode with auto-scale disabled: the plugin will run one arena for each 1 minecraft instance.
+* auto-balance enabled: the plugin will run multiple arena processes with 1 minecraft instance. (Redis is required to be enabled)
+* auto-balance disabled: the plugin will run one arena for each 1 minecraft instance.
 
 ### Multi-arena Mode
 
@@ -72,12 +72,13 @@ We offer a very advanced & designable loot chest system. Items are based in chan
 ****
 
 # Credits
-Thanks to:
+Special thanks to:
 * Primt: Logo designing
 * Invvk: Some help with code organizing and modules ordering
 * SlawPing: Some help with the idea of the mini-game and coding stuff
 * Mqzn: Working on the api & base code
 * DirectPlan: Working on the api & base code
+* MrMicky: FastBoard as Scoreboard Library
 
 Also thanks to everyone who kept this project alive and up-to-date :heart:
 
