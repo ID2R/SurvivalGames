@@ -14,8 +14,8 @@ import java.util.UUID;
 public class JSONStorage extends StorageRepository {
 
 
-    public JSONStorage(ConnectionCredentials credentials) {
-        super(credentials);
+    public JSONStorage() {
+        super(null); // Since it doesn't require any credentials we can set it to null
     }
 
     @Override
@@ -35,16 +35,6 @@ public class JSONStorage extends StorageRepository {
 
     @Override
     public void savePlayer(SGPlayer player) {
-
-    }
-
-    @Override
-    public Map<String, SGArena> loadArenas() {
-        return null;
-    }
-
-    @Override
-    public void saveArenas() {
 
     }
 }

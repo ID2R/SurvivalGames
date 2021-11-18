@@ -81,8 +81,4 @@ public enum ConfigKeys {
     public String getKey() {
         return key;
     }
-
-    public void setDefaultValue(Object defaultValue) {
-        this.defaultValue = defaultValue;
-    }
 }

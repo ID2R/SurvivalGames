@@ -12,4 +12,5 @@ public class SurvivalGamesProvider {
     public static void registerApi(SurvivalGames api) {
         SurvivalGamesProvider.api = api;
     }
+
 }

@@ -1,15 +1,31 @@
 #
-#       SurvivalGames by iiProCraft
+#       SurvivalGames by iiProCraft - Main configuration
 #
-# for assistance visit https://github.com/iiProCraft/SurvivalGames/wiki/configuration/config-yml
+# for assistance visit https://github.com/iiProCraft/SurvivalGames/wiki/configuration-config-yml
 options:
+  # Available server modes:
+  #
+  # - SHARED:
+  # Description: If you want to run the plugin with another mini-games
+  #
+  # - MULTI_ARENA:
+  # Description: If you want to run the plugin with another mini-games
+  #
+  # - BUNGEE:
+  # Description: If you want to separate between lobby and arenas servers
+
   mode: SHARED
   bungee:
+    # Lobby servers:
+    # Description: it will pick up a random server from this list
     lobby-servers:
       - SG01L
       - SG02L
+    # Server name:
+    # Description: This value used to get the server name for bungee
+    #              mode to send players to it.
     server-name: 'SG01'
-    auto-scale: false
+    auto-balance: false
     json:
       directory: '$ROOTDIR/players/'
     sqlite:

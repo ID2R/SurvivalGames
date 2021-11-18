@@ -25,7 +25,4 @@ public abstract class StorageRepository implements StorageConnection {
 
     public abstract void savePlayer(SGPlayer player);
 
-    public abstract Map<String, SGArena> loadArenas();
-
-    public abstract void saveArenas();
 }
