@@ -44,4 +44,14 @@
             <scope>compile</scope>
         </dependency>
     </dependencies>
+         
+    <build>
+        <resources>
+            <resource>
+                <!-- Invvk - filtering and replacing files that contains maven properties -->
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources> 
+    </build>
 </project>
