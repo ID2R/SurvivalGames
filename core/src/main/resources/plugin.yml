@@ -5,5 +5,5 @@ authors:
   - DirectPlan
   - Invvk
   - SlawPing
-version: ${project.version}
+version: ${parent.version}
 main: dev.iiprocraft.sg.base.SGPluginLoader
