@@ -26,12 +26,12 @@ shadowJar {
     archiveClassifier.set('')
     archiveVersion.set('')
 
-    //destinationDirectory = file(base117)
+    destinationDirectory = file(base117)
 
     exclude 'META-INF/**'
     exclude 'LICENSE'
 
-    relocate 'com.zaxxers', 'dev.id2r.common.libs.hikaricp'
+    relocate 'com.zaxxer', 'dev.id2r.common.libs.hikaricp'
 
     finalizedBy('clean', ':api:clean', ':abstraction:clean')
 }
@@ -41,3 +41,5 @@ spigot {
     name 'SurvivalGames'
     authors 'iiProCraft', 'DirectPlan', 'Invvk', 'Mzqn'
 }
+
+tasks.build.dependsOn(shadowJar)
