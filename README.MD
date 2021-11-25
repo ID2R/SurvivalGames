@@ -88,14 +88,16 @@ This project is licensed under [MIT License](https://opensource.org/licenses/MIT
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/iiProCraft/dev.iiprocraft.sg.api.SurvivalGames.svg?style=for-the-badge
-[contributors-url]: https://github.com/iiProCraft/dev.iiprocraft.sg.api.SurvivalGames/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/iiProCraft/dev.iiprocraft.sg.api.SurvivalGames.svg?style=for-the-badge
-[forks-url]: https://github.com/iiProCraft/dev.iiprocraft.sg.api.SurvivalGames/network/members
-[stars-shield]: https://img.shields.io/github/stars/iiProCraft/dev.iiprocraft.sg.api.SurvivalGames.svg?style=for-the-badge
-[stars-url]: https://github.com/iiProCraft/dev.iiprocraft.sg.api.SurvivalGames/stargazers
-[issues-shield]: https://img.shields.io/github/issues/iiProCraft/dev.iiprocraft.sg.api.SurvivalGames.svg?style=for-the-badge
-[issues-url]: https://github.com/iiProCraft/dev.iiprocraft.sg.api.SurvivalGames/issues
-[license-shield]: https://img.shields.io/github/license/iiProCraft/dev.iiprocraft.sg.api.SurvivalGames.svg?style=for-the-badge
-[license-url]: https://github.com/iiProCraft/dev.iiprocraft.sg.api.SurvivalGames/blob/master/LICENSE
-[product-screenshot]: images/logo.png
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/iiProCraft/SurvivalGames.svg?style=for-the-badge
+[contributors-url]: https://github.com/iiProCraft/SurvivalGames/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/iiProCraft/SurvivalGames.svg?style=for-the-badge
+[forks-url]: https://github.com/iiProCraft/SurvivalGames/network/members
+[stars-shield]: https://img.shields.io/github/stars/iiProCraft/SurvivalGames.svg?style=for-the-badge
+[stars-url]: https://github.com/iiProCraft/SurvivalGames/stargazers
+[issues-shield]: https://img.shields.io/github/issues/iiProCraft/SurvivalGames.svg?style=for-the-badge
+[issues-url]: https://github.com/iiProCraft/SurvivalGames/issues
+[license-shield]: https://img.shields.io/github/license/iiProCraft/SurvivalGames.svg?style=for-the-badge
+[license-url]: https://github.com/iiProCraft/SurvivalGames/blob/master/LICENSE
+[product-screenshot]: .github/images/logo.png
