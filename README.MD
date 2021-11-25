@@ -27,7 +27,7 @@
 
 ## About This Project
 
-For years ago, a lot of players want a dev.iiprocraft.sg.api.SurvivalGames system like HiveMC's one and since HiveMC closed at April 15, 2021, there is not another place to play their games. So I decided to recreate their game-modes for free and let other developers modify it as they want, that's why it's open source.
+For years ago, a lot of players want a SurvivalGames system like HiveMC's one and since HiveMC closed at April 15, 2021, there is not another place to play their games. So I decided to recreate their game-modes for free and let other developers modify it as they want, that's why it's open source.
 
 ## Features
 
@@ -49,12 +49,12 @@ We have multiple ways to run the plugin:
 
 If you want to run this plugin with singleton server, there are two ways to run the plugin:
 
-* auto-balance enabled: the plugin will run multiple dev.iiprocraft.sg.api.arena processes with 1 minecraft instance. (Redis is required to be enabled)
-* auto-balance disabled: the plugin will run one dev.iiprocraft.sg.api.arena for each 1 minecraft instance.
+* auto-balance enabled: the plugin will run multiple arena processes with 1 minecraft instance. (Redis is required to be enabled)
+* auto-balance disabled: the plugin will run one arena for each 1 minecraft instance.
 
-### Multi-dev.iiprocraft.sg.api.arena Mode
+### Multi-arena Mode
 
-The best solution if you have a small minecraft server with ~100 players average, it will run all dev.iiprocraft.sg.api.SurvivalGames processes such as lobby and arenas with 1 minecraft instance.
+The best solution if you have a small minecraft server with ~100 players average, it will run all SurvivalGames processes such as lobby and arenas with 1 minecraft instance.
 
 ### Shared mode
 
@@ -63,7 +63,7 @@ A Great solution for very small servers like ~40 players average if you want to 
 ## Chest System
 
 <div align="center">
-  <a href="https://github.com/iiProCraft/dev.iiprocraft.sg.api.SurvivalGames">
+  <a href="https://github.com/id2r/SurvivalGames">
     <img src=".github/images/chests.png" alt="Chests">
   </a>
 </div>
@@ -90,14 +90,14 @@ This project is licensed under [MIT License](https://opensource.org/licenses/MIT
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/iiProCraft/SurvivalGames.svg?style=for-the-badge
-[contributors-url]: https://github.com/iiProCraft/SurvivalGames/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/iiProCraft/SurvivalGames.svg?style=for-the-badge
-[forks-url]: https://github.com/iiProCraft/SurvivalGames/network/members
-[stars-shield]: https://img.shields.io/github/stars/iiProCraft/SurvivalGames.svg?style=for-the-badge
-[stars-url]: https://github.com/iiProCraft/SurvivalGames/stargazers
-[issues-shield]: https://img.shields.io/github/issues/iiProCraft/SurvivalGames.svg?style=for-the-badge
-[issues-url]: https://github.com/iiProCraft/SurvivalGames/issues
-[license-shield]: https://img.shields.io/github/license/iiProCraft/SurvivalGames.svg?style=for-the-badge
-[license-url]: https://github.com/iiProCraft/SurvivalGames/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/id2r/SurvivalGames.svg?style=for-the-badge
+[contributors-url]: https://github.com/id2r/SurvivalGames/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/id2r/SurvivalGames.svg?style=for-the-badge
+[forks-url]: https://github.com/id2r/SurvivalGames/network/members
+[stars-shield]: https://img.shields.io/github/stars/id2r/SurvivalGames.svg?style=for-the-badge
+[stars-url]: https://github.com/id2r/SurvivalGames/stargazers
+[issues-shield]: https://img.shields.io/github/issues/id2r/SurvivalGames.svg?style=for-the-badge
+[issues-url]: https://github.com/id2r/SurvivalGames/issues
+[license-shield]: https://img.shields.io/github/license/id2r/SurvivalGames.svg?style=for-the-badge
+[license-url]: https://github.com/id2r/SurvivalGames/blob/master/LICENSE
 [product-screenshot]: .github/images/logo.png
