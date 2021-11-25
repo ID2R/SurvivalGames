@@ -6,21 +6,21 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/iiProCraft/dev.iiprocraft.sg.api.SurvivalGames">
+  <a href="https://github.com/id2r/SurvivalGames">
     <img src=".github/images/logo.png" alt="Logo">
   </a>
 
-<h3 align="center">dev.iiprocraft.sg.api.SurvivalGames</h3>
+<h3 align="center">SurvivalGames</h3>
 
   <p align="center">
-    The best dev.iiprocraft.sg.api.SurvivalGames project at the market
+    The best SurvivalGames project at the market
     <br />
     <br />
-    <a href="https://github.com/iiProCraft/dev.iiprocraft.sg.api.SurvivalGames/wiki">Wiki</a>
+    <a href="https://github.com/id2r/SurvivalGames/wiki">Wiki</a>
     •
-    <a href="https://github.com/iiProCraft/dev.iiprocraft.sg.api.SurvivalGames/issues/new?assignees=&labels=Requires+Testing&template=bug_report.yml">Report issue</a>
+    <a href="https://github.com/id2r/SurvivalGames/issues/new?assignees=&labels=Requires+Testing&template=bug_report.yml">Report issue</a>
     •
-    <a href="https://github.com/iiProCraft/dev.iiprocraft.sg.api.SurvivalGames/issues/new?assignees=&labels=Enhancement&template=feature_request.yml">Request feature</a>
+    <a href="https://github.com/id2r/SurvivalGames/issues/new?assignees=&labels=Enhancement&template=feature_request.yml">Request feature</a>
     <br />
   </p>
 </div>
