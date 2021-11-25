@@ -27,20 +27,20 @@ package dev.iiprocraft.sg.base;
 import dev.iiprocraft.sg.base.plugin.SGPluginBootstrap;
 import org.bukkit.plugin.java.JavaPlugin;
 
-/**
- * @author iiProCraft
- */
-public class SGPluginLoader extends JavaPlugin {
+ /**
+  * @author iiProCraft
+  */
+ public class SGPluginLoader extends JavaPlugin {
 
-    private final SGPluginBootstrap plugin = new SGPluginBootstrap(this);
+     private final SGPluginBootstrap plugin = new SGPluginBootstrap(this);
 
-    @Override
-    public void onEnable() {
-        plugin.enable();
-    }
+     @Override
+     public void onEnable() {
+         plugin.enable();
+     }
 
-    @Override
-    public void onDisable() {
-        plugin.disable();
-    }
-}
+     @Override
+     public void onDisable() {
+         plugin.disable();
+     }
+ }

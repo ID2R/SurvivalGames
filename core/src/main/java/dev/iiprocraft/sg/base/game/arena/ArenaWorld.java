@@ -31,10 +31,10 @@ import org.bukkit.World;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
- public class ArenaWorld {
+ @Data
+  public class ArenaWorld {
 
-     private final World world;
-     private final String name;
-     private final List<Location> spawnLocations = new ArrayList<>();
-}
+      private final World world;
+      private final String name;
+      private final List<Location> spawnLocations = new ArrayList<>();
+ }

@@ -7,20 +7,23 @@ import dev.iiprocraft.sg.base.storage.impl.MongoStorage;
 import dev.iiprocraft.sg.base.storage.impl.MySQLStorage;
 import dev.iiprocraft.sg.base.storage.misc.ConnectionCredentials;
 import dev.iiprocraft.sg.base.storage.misc.StorageMethod;
-import lombok.Getter;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.UUID;
 
 /**
  * @author DirectPlan
  */
-
 public final class Storage {
 
     private StorageRepository storageRepository;
-    @Getter private final StorageMethod storageMethod;
+    private final JavaPlugin loader;
+    private final StorageMethod storageMethod;
 
-    public Storage() {
+    public Storage(JavaPlugin loader) {
+
+        this.loader = loader;
+
         String host = ConfigKeys.STORAGE_HOST.getString();
         int port = ConfigKeys.STORAGE_PORT.getInteger();
         String username = ConfigKeys.STORAGE_USERNAME.getString();
@@ -28,7 +31,7 @@ public final class Storage {
         String database = ConfigKeys.STORAGE_DATABASE.getString();
         int maximumPoolSize = ConfigKeys.STORAGE_MAXIMUM_POOL_SIZE.getInteger();
 
-        storageMethod = StorageMethod.valueOf(ConfigKeys.STORAGE_METHOD.getString());
+        this.storageMethod = StorageMethod.valueOf(ConfigKeys.STORAGE_METHOD.getString());
 
         ConnectionCredentials credentials = new ConnectionCredentials(host, username, password, database, port, maximumPoolSize);
         switch (storageMethod) {
@@ -44,6 +47,10 @@ public final class Storage {
                 storageRepository = new JSONStorage();
             }
         }
+    }
+
+    public StorageMethod getStorageMethod() {
+        return storageMethod;
     }
 
     public void connect() {

@@ -29,7 +29,7 @@ public class ConfigurationAdapter {
         configuration = YamlConfiguration.loadConfiguration(file);
     }
 
-    private void loadKeys() {
+    public void loadKeys() {
         loadConfiguration();
         for(ConfigKeys configKey : ConfigKeys.values()) {
             if(!configKey.getConfigFile().equals(file.getName())) continue;

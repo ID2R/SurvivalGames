@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+}
+
+group 'dev.id2r'
+version '1.0.0-BETA'
+
+repositories {
+    mavenCentral()
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    compileJava.options.encoding = "UTF-8"
+
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(8))
+        }
+    }
+
+    repositories {
+        mavenCentral()
+        maven {
+            name 'nms-repo'
+            url 'https://repo.codemc.org/repository/nms/'
+        }
+        maven {
+            name 'glaremasters'
+            url 'https://repo.glaremasters.me/repository/concuncan/'
+        }
+    }
+
+    dependencies {
+        implementation 'org.projectlombok:lombok:1.18.22'
+    }
+}

@@ -1,0 +1,11 @@
+plugins {
+    id 'java'
+}
+
+group 'dev.id2r'
+version "$parent.version"
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT'
+    implementation project(':abstraction')
+}

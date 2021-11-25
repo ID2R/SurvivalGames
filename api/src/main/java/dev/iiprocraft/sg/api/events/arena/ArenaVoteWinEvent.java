@@ -26,6 +26,6 @@ package dev.iiprocraft.sg.api.events.arena;
 
 import dev.iiprocraft.sg.api.events.AbstractEvent;
 
-public class ArenaVoteWinEvent extends AbstractEvent {
+ public class ArenaVoteWinEvent extends AbstractEvent {
 
-}
+ }

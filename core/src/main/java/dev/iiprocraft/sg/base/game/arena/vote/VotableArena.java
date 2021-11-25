@@ -29,21 +29,21 @@ import org.bukkit.entity.Player;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VotableArena {
+ public class VotableArena {
 
-    private final String name;
-    private final List<Player> voters;
+     private final String name;
+     private final List<Player> voters;
 
-    public VotableArena(String name) {
-        this.name = name;
-        this.voters = new ArrayList<>();
-    }
+     public VotableArena(String name) {
+         this.name = name;
+         this.voters = new ArrayList<>();
+     }
 
-    public String getName() {
-        return name;
-    }
+     public String getName() {
+         return name;
+     }
 
-    public List<Player> getVoters() {
-        return voters;
-    }
-}
+     public List<Player> getVoters() {
+         return voters;
+     }
+ }

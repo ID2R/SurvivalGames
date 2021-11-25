@@ -1,9 +1,11 @@
 package dev.iiprocraft.sg.base.storage;
 
+import dev.iiprocraft.sg.base.game.arena.SGArena;
 import dev.iiprocraft.sg.base.player.SGPlayer;
 import dev.iiprocraft.sg.base.storage.misc.ConnectionCredentials;
 import lombok.Getter;
 
+import java.util.Map;
 import java.util.UUID;
 
 /**

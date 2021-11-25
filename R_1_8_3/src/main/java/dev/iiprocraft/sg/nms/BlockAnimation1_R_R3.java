@@ -23,7 +23,7 @@
  * SOFTWARE.
  */
 
-package dev.iiprocraft.sg.nms.block;
+package dev.iiprocraft.sg.nms;
 
 import dev.iiprocraft.sg.common.nms.block.BlockAnimationNMS;
 import net.minecraft.server.v1_8_R3.BlockPosition;

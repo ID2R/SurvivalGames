@@ -1,0 +1,6 @@
+rootProject.name = 'SurvivalGames'
+include 'api'
+include 'abstraction'
+include 'R_1_8_3'
+include 'core'
+

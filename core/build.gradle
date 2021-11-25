@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.0'
+    id 'kr.entree.spigradle' version '2.2.4'
+}
+
+group 'dev.id2r'
+version "$parent.version"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'com.grinderwolf:slimeworldmanager-api:2.2.1'
+    compileOnly 'org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT'
+
+    implementation 'com.zaxxer:HikariCP:4.0.3'
+
+    implementation project(':api')
+    implementation project(':abstraction')
+}
+
+shadowJar {
+    archiveBaseName.set('SurvivalGames')
+    archiveClassifier.set('')
+    archiveVersion.set('')
+
+    //destinationDirectory = file(base117)
+
+    exclude 'META-INF/**'
+    exclude 'LICENSE'
+
+    relocate 'com.zaxxers', 'dev.id2r.common.libs.hikaricp'
+
+    finalizedBy('clean', ':api:clean', ':abstraction:clean')
+}
+
+
+spigot {
+    name 'SurvivalGames'
+    authors 'iiProCraft', 'DirectPlan', 'Invvk', 'Mzqn'
+}

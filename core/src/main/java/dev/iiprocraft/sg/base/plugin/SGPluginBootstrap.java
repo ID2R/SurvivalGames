@@ -48,11 +48,27 @@ public class SGPluginBootstrap implements PluginLoader {
     private final JavaPlugin loader;
 
     private final ArenaManager arenaManager = new ArenaManager();
-    private final PlayerManager playerManager = new PlayerManager(this);;
-    private final ConfigHandler configHandler = new ConfigHandler();
 
-    private final Storage storage = new Storage();
-    private final PluginManager pluginManager = new SGPluginManager();
+    private final PlayerManager playerManager;
+  
+    private final ConfigHandler configHandler = new ConfigHandler();
+    private final Storage storage;
+    private final PluginManager pluginManager;
+    private final String COLOR_CHAR;
+
+     /**
+      * This constructor initialize the variables of
+      * this class.
+      *
+      * @param loader The main class of the plugin
+      */
+    public SGPluginBootstrap(JavaPlugin loader) {
+        this.loader         = loader;
+        this.storage        = new Storage(loader);
+        playerManager = new PlayerManager(this);
+        this.pluginManager  = new SGPluginManager();
+        this.COLOR_CHAR     = "§";
+    }
 
     @Override
     public void enable() {
@@ -69,9 +85,15 @@ public class SGPluginBootstrap implements PluginLoader {
         Arrays.asList(startupMessage).forEach(string -> {
             loader.getServer().getConsoleSender().sendMessage(ChatColor.GOLD+string);
         });
-        loader.getServer().getConsoleSender().sendMessage(ChatColor.YELLOW + "This server is running " + ChatColor.BLUE + "SurvivalGames" + ChatColor.YELLOW
-                + " version " + ChatColor.GOLD + loader.getDescription().getVersion()
+        loader.getServer().getConsoleSender().sendMessage(
+                (COLOR_CHAR+'e')+"This server is running " + (COLOR_CHAR+'9') + "dev.iiprocraft.sg.api.SurvivalGames" + (COLOR_CHAR+'e')
+                + " version " + (COLOR_CHAR+'6')+loader.getDescription().getVersion()
         );
+
+        /*
+         * It will generate the default configuration
+         */
+        loader.saveDefaultConfig();
 
         configHandler.addConfiguration("config", new ConfigurationAdapter(this, "config.yml"));
         configHandler.addConfiguration("messages", new ConfigurationAdapter(this, "messages.yml"));
@@ -86,5 +108,23 @@ public class SGPluginBootstrap implements PluginLoader {
         configHandler.saveConfigurations();
         storage.close();
     }
+
+    public Storage getStorage() {
+        return storage;
+    }
+
+    public ArenaManager getArenaManager() {
+        return arenaManager;
+    }
+
+    public PlayerManager getPlayerManager() {
+        return playerManager;
+    }
+
+    public JavaPlugin getLoader() {
+        return loader;
+    }
+
+    public PluginManager getPluginManager() { return pluginManager; }
 }
 
