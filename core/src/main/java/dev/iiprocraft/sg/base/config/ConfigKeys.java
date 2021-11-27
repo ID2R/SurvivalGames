@@ -20,7 +20,7 @@ public enum ConfigKeys {
     STORAGE_PORT("storage.port", "config.yml", 0, false),
     STORAGE_USERNAME("storage.username", "config.yml", "username"),
     STORAGE_PASSWORD("storage.password", "config.yml", "password"),
-    STORAGE_DATABASE("storage.database", "config.yml", "dev.iiprocraft.sg.api.SurvivalGames"),
+    STORAGE_DATABASE("storage.database", "config.yml", "SurvivalGames"),
     STORAGE_MAXIMUM_POOL_SIZE("storage.maximumPoolSize", "config.yml", 10);
 
 

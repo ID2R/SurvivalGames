@@ -86,7 +86,7 @@ public class SGPluginBootstrap implements PluginLoader {
             loader.getServer().getConsoleSender().sendMessage(ChatColor.GOLD+string);
         });
         loader.getServer().getConsoleSender().sendMessage(
-                (COLOR_CHAR+'e')+"This server is running " + (COLOR_CHAR+'9') + "dev.iiprocraft.sg.api.SurvivalGames" + (COLOR_CHAR+'e')
+                (COLOR_CHAR+'e')+"This server is running " + (COLOR_CHAR+'9') + "SurvivalGames" + (COLOR_CHAR+'e')
                 + " version " + (COLOR_CHAR+'6')+loader.getDescription().getVersion()
         );
 
